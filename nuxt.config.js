@@ -1,3 +1,5 @@
+import webpack from 'webpack'
+
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: false,
@@ -9,23 +11,65 @@ export default {
   head: {
     title: '3artsconcept',
     meta: [
-      { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
-      { name: 'format-detection', content: 'telephone=no' }
+      { charset: 'utf-8' },
+      {
+        name: 'google-site-verification',
+        content: '-8RU8uitYrDu2OLCcJ1wW4_Yx35iy6rD4A0npZyUW_4',
+      },
+      {
+        hid: 'description',
+        name: 'description',
+        content:
+          '3Arts Concept is founded with the vision to pioneer a facelift towards collective memories! Valuable memories belonging to every individual which carries a significant story behind. Our aim is to provide, achieving acceptance and to display collective showcases in your premises at affordable prices',
+      },
+      {
+        name: 'keywords',
+        content: '3Arts, 3Arts Concept, 3D Printing, 3D Portrait, 3D figuring',
+      },
+      {
+        name: 'copyright',
+        content:
+          '3Arts Concept is a registered trademakr of 3Arts Concept Private Limited',
+      },
+      {
+        name: 'author',
+        content: 'Ralee Websolutions',
+      },
+      {
+        property: 'og:url',
+        content: 'https://www.3artsconcept.com',
+      },
+      {
+        property: 'og:type',
+        content: 'website',
+      },
+      {
+        property: 'og:title',
+        content: 'Facelift towards collective memories',
+      },
+      {
+        property: 'og:description',
+        content:
+          'Photographs are now passé towards collective memories. With enhanced 3D technology,a new era of illustration is born!',
+      },
+      {
+        property: 'og:image',
+        content: 'https://www.3artsconcept.com/img/coverPhoto.jpg',
+      },
+      {
+        property: 'fb:app_id',
+        content: '137106553389689',
+      },
     ],
-    link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ]
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [
-  ],
+  css: ['~/assets/css/app.css'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [
-  ],
+  plugins: [],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -52,11 +96,16 @@ export default {
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
     manifest: {
-      lang: 'en'
-    }
+      lang: 'en',
+    },
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-  }
+    plugins: [
+      new webpack.ProvidePlugin({
+        $: 'jquery',
+      }),
+    ],
+  },
 }
