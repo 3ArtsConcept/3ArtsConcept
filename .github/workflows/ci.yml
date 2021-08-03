@@ -1,4 +1,4 @@
-name: ci
+name: 'Build Test'
 
 on:
   push:
@@ -11,7 +11,7 @@ on:
       - master
 
 jobs:
-  ci:
+  'Build Test':
     runs-on: ${{ matrix.os }}
 
     strategy:
@@ -39,3 +39,6 @@ jobs:
 
       - name: Install dependencies 👨🏻‍💻
         run: npm ci --prefer-offline --no-audit
+
+      - name: Build It 🏗
+        run: npm run generate
