@@ -11,7 +11,7 @@ on:
       - master
 
 jobs:
-  'Build Test':
+  build:
     runs-on: ${{ matrix.os }}
 
     strategy:
