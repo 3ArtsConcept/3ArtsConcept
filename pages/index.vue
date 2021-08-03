@@ -498,12 +498,11 @@
   </div>
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
+<script>
 import popup from '@/components/old/Popup.vue'
 import partnerPopup from '@/components/old/partnerPopup.vue'
 
-export default Vue.extend({
+export default {
   data() {
     return {
       Number: '',
@@ -594,5 +593,5 @@ export default Vue.extend({
       }
     },
   },
-})
+}
 </script>
