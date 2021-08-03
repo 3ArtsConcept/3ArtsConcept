@@ -1,0 +1,72 @@
+.NE{
+    background:url('/img/NE/mobile/nd-background.jpg') center center no-repeat; 
+    background-size:100% 100%;
+    @media(min-width:768px){background:url('/img/NE/website/nd-background.jpg') center center no-repeat; background-size:cover;}
+    
+    min-height: 200px;
+    padding:30px 20px;
+    @media(min-width:768px){padding:60px 20px;}
+    overflow: auto;
+    display: block;
+
+    &_header{
+        h1,h2{
+            margin:0;
+        }
+        h1{
+            @media(max-width:767px){font-size:22px; }
+        }
+        h2{
+            @media(max-width:767px){font-size:20px; }   
+        }
+        .black_divider{
+            @media(max-width:767px){max-width:85%; }      
+        }
+        position: relative; padding-bottom:25px;
+
+    }
+    &_hearts{
+        position:absolute;
+        top:0;
+        right:0;
+        margin-top: -10px; height:120px;
+        @media(min-width:992px){
+            margin-top: -20px;height: 140px;
+        }
+
+        &--mobile{
+            margin:auto;
+            height: 150px;
+            margin-top: 10px;
+        }
+    }
+
+    &_content{
+        &_image{
+            @media(min-width:768px){text-align:right;}
+        }
+        img{
+            width:100%;
+            @media(min-width:375px) and (orientation: landscape){
+                max-width:280px;   
+            }
+            @media(max-width:767px){margin-bottom:15px;}
+            @media(min-width:768px){max-width:280px;}
+        }
+        p{
+            max-width: 540px;
+            @media(max-width:767px){margin:auto;}
+            @media(min-width:1200px){
+                max-width:640px;
+                font-size: 18px;
+            }
+            @media(min-width:1600px){max-width:1000px;}
+
+            max-height: 440px;
+            overflow: scroll;
+            overflow-x: hidden;
+            background: rgba(255,255,255,0.7);
+            padding:20px;
+        }
+    }
+}

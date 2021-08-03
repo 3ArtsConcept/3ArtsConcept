@@ -1,0 +1,73 @@
+.product{
+	&_description{
+		background:$beach;
+		padding:0 50px 50px 50px;
+		h1{
+			padding-top: 10%; margin-top: 0;
+		}
+		h2{
+			font-size: 26px;
+			@media(min-width:1023px) and (max-width:1199px) and (orientation: landscape) {font-size:22px;}
+		}
+		p{
+			font-size: 16px; line-height:1em;
+			@media(min-width:1023px) and (max-width:1199px) and (orientation: landscape) {font-size:14px;}
+			@media(min-width:1199px) and (max-width:1366px) {
+				font-size: 14px;
+			}
+		}
+	}
+	& > div{
+		height:100%;
+	}
+
+	&_box{
+		height:100%; position:relative;
+		background-color:#000;
+		img{
+			width:100%; height:100%;
+		}
+		&_caption{
+			width: 100%; height:100%; color:#fff;
+			position:absolute;
+			padding:20px;
+			cursor:pointer;
+			figcaption{
+				
+				border:3px solid #fff;
+				height: 100%;
+				width:100%;
+				margin: 0;
+				display:none;
+				h1{
+					padding:0 5px;
+					display:table-cell;
+					vertical-align: middle;
+				}
+			}
+			&:hover{
+				figcaption{
+					display: table;
+				}
+				background-color:rgba(0,0,0, 0.4);
+			}
+		}
+	}
+
+	&_wrap{
+		height:100%;
+		&_50{
+			@media(min-width:992px){height:50%;}
+		}
+	}
+
+	&_one{
+		background-image: url("/img/hamster.jpg");
+		&:hover{
+			background-color:#fff;
+		}
+	}
+	&_two{background-image: url("/img/child.jpg");}
+	&_three{background-image: url("/img/two-thumbs.jpg");}
+	&_four{background-image: url("/img/graduant.jpg");}
+}	

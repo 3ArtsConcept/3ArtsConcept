@@ -1,0 +1,60 @@
+.aboutUs{
+	display: block;
+	position: relative;
+	background-color:#FDFCFF;
+	@media(max-width:991px){min-height:100vh;}	
+	img{
+		max-width: 100%;
+	}
+	&_caption{
+		
+		height: 80%;
+		position: absolute;
+		background-color: rgba(255,255,255, 0.85);
+		right: 0;
+		
+		z-index: 2;
+		padding:10%;
+		@media(max-width:767px){bottom:0;}
+
+		@media(min-width:768px){
+			padding:0 75px;
+			width: 600px;
+			top:10%;
+		}
+		h1{
+			margin-top: 12%;
+			@media(max-width:767px){font-size:22px; margin-bottom:0px;}
+		}
+		h2{
+			font-size: 24px;
+			@media(max-width:767px){font-size:20px; margin-bottom:0px;}	
+		}
+		b{
+			font-size: 22px;
+			@media(max-width:767px){font-size:18px; margin-bottom:0px;}	
+		}
+		span{
+			font-size: 16px;
+			@media(max-width:767px){font-size:12px; margin-bottom:0px;}	
+		}
+		p{
+			font-size: 12px;
+			@media(min-width:768px){font-size:16px;}
+		}
+	}
+}
+
+.partner{
+	width:90px;
+	height:auto;
+	cursor:pointer;
+	&:hover{
+		opacity:0.6;
+	}
+}
+
+#bgvid{
+	position: absolute;top:0;left:0;
+	width:100%;
+}

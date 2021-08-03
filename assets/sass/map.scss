@@ -1,0 +1,8 @@
+#firstHeading{
+    font-size: 22px;
+    @media(min-width:768px){font-size:28px;}
+}
+#bodyContent{
+    font-size: 12px;
+    @media(min-width:768px){font-size:16px;}
+}

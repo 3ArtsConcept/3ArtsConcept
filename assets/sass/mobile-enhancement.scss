@@ -1,0 +1,17 @@
+
+
+.hide-m-portrait{
+    @media screen and (max-device-width: 480px) and (orientation: portrait){
+        display: none;
+    }    
+}
+
+.hide-m-landscape{
+    @media screen and (max-device-width: 767px) and (orientation: landscape){
+        display: none;
+    }
+}
+
+.hide-desktop{
+    @media(min-width:992px){display:none;}
+}

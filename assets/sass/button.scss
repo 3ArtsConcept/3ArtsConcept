@@ -1,0 +1,21 @@
+.btn{
+	&_contact{
+		width: 150px;
+		font-size: 20px;
+		border-radius: 15px;
+		opacity: 1;
+		background: #e5ecac;
+		margin-top: 40px;
+		cursor:pointer;
+		font-weight: bold;
+		
+		&:hover{
+			opacity: 0.8;
+		}
+
+		&:focus, &:active{
+			outline: none !important;
+			box-shadow: none;
+		}
+	}
+}

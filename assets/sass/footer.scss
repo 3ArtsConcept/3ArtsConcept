@@ -1,0 +1,39 @@
+footer{
+	background-color:#fff;
+	padding:15px;
+	a{
+		cursor: pointer;
+	}
+	.fa{
+		font-size: 30px;
+		@media(min-width:768px){font-size: 22px;}
+		border: 2px solid $footerIconBG;
+		border-radius: 100px;
+		background-color:$footerIconBG;
+		color:#fff;
+	}
+	.fa-facebook{
+		margin-right:8px;
+		padding: 10px 16px;
+		@media(max-width:768px){ padding: 8px 12.5px;}
+	}
+	.fa-instagram{
+		padding:10px 12px;
+		@media(max-width:768px){ padding: 8px 10px;}
+	}
+
+	.copyright{
+		font-size: 14px;
+		@media(min-width:768px){font-size: 16px;}
+		margin-top:10px;
+		div{
+			&:first-of-type{
+				border-right:1px solid #000;
+				padding-right:10px;
+			}
+			&:last-of-type{
+				padding-left:10px;	
+			}
+		}
+	}
+}
