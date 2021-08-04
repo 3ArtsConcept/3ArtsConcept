@@ -1,10 +1,7 @@
 <template>
   <div>
     <nav class="container navbar-fixed-top">
-      <img
-        src="<?php echo 'data:image;base64,'.base64_encode(file_get_contents('img/logo-topleft.jpg')) ?>"
-        class="pull-left logo"
-      />
+      <img src="img/logo-topleft.jpg'" class="pull-left logo" />
     </nav>
     <div class="nav_buttons">
       <ul>
@@ -262,10 +259,7 @@
                 <h1>Young Ones</h1>
               </figcaption>
             </figure>
-            <img
-              src="<?php echo 'data:image;base64,'.base64_encode(file_get_contents('img/child.jpg')) ?>"
-              alt="3Arts Young Ones Category"
-            />
+            <img src="img/child.jpg" alt="3Arts Young Ones Category" />
           </div>
           <div class="col-ms-6 product_box">
             <figure
@@ -277,10 +271,7 @@
                 <h1>Wedding</h1>
               </figcaption>
             </figure>
-            <img
-              src="<?php echo 'data:image;base64,'.base64_encode(file_get_contents('img/two-thumbs.jpg')) ?>"
-              alt="3Arts Wedding Category"
-            />
+            <img src="img/two-thumbs.jpg" alt="3Arts Wedding Category" />
           </div>
         </div>
         <div class="row no-gutter product_wrap_50">
@@ -295,7 +286,7 @@
               </figcaption>
             </figure>
             <img
-              src="<?php echo 'data:image;base64,'.base64_encode(file_get_contents('img/indian-female.jpg')) ?>"
+              src="img/indian-female.jpg"
               alt="3Arts Individual Portrait Category"
             />
           </div>
@@ -310,7 +301,7 @@
               </figcaption>
             </figure>
             <img
-              src="<?php echo 'data:image;base64,'.base64_encode(file_get_contents('img/man-woman.jpg')) ?>"
+              src="img/man-woman.jpg"
               alt="3Arts Corporate Branding Category"
             />
           </div>
@@ -321,25 +312,25 @@
       <div class="row no-gutter">
         <div class="col-ms-3">
           <img
-            src="<?php echo 'data:image;base64,'.base64_encode(file_get_contents('img/NE/website/one.jpg')) ?>"
+            src="img/NE/website/one.jpg"
             alt="3Arts Family 3D Model Showcase with Great Wall of China Background, Consisting of 5 colored 3D model. 3 Adults and 2 Children"
           />
         </div>
         <div class="col-ms-3">
           <img
-            src="<?php echo 'data:image;base64,'.base64_encode(file_get_contents('img/3d-couples-model.jpg')) ?>"
+            src="img/3d-couples-model.jpg"
             alt="3Arts Senior 3D Model showcase, Consisting of both Male and Female senior adults 3D Model"
           />
         </div>
         <div class="col-ms-3">
           <img
-            src="<?php echo 'data:image;base64,'.base64_encode(file_get_contents('img/Showcase-3D-Jap.jpg')) ?>"
+            src="img/Showcase-3D-Jap.jpg"
             alt="3Arts Individual Colored 3D Model Showcase with japanese setting"
           />
         </div>
         <div class="col-ms-3">
           <img
-            src="<?php echo 'data:image;base64,'.base64_encode(file_get_contents('img/NE/website/three.jpg')) ?>"
+            src="img/NE/website/three.jpg"
             alt="3Arts Individual Colored 3D Model Showcase with Box and grass background setup"
           />
         </div>
@@ -349,11 +340,7 @@
       <div class="col-md-5 steps_description">
         <div class="steps_content">
           <h1>Price & Progress</h1>
-          <img
-            src="<?php echo 'data:image;base64,'.base64_encode(file_get_contents('img/divider02.png')) ?>"
-            alt=""
-            class="black_divider"
-          />
+          <img src="img/divider02.png" alt="" class="black_divider" />
           <p>
             <b>Selfie Impression Figurine</b>
           </p>
@@ -397,11 +384,7 @@
         <div class="col-md-6 contactUs_form height_100">
           <div class="contactUs_wrapper">
             <h1>Contact</h1>
-            <img
-              src="<?php echo 'data:image;base64,'.base64_encode(file_get_contents('img/divider02.png')) ?>"
-              alt=""
-              class="black_divider"
-            />
+            <img src="img/divider02.png" alt="" class="black_divider" />
             <div
               class="form-group input_wrapper"
               :class="{ 'has-error': error.Name }"
