@@ -1,9 +1,9 @@
 <template>
   <div>
-    <nav class="container navbar-fixed-top">
-      <img src="img/logo-topleft.jpg'" class="pull-left logo" />
-    </nav>
-    <div class="nav_buttons">
+    <b-navbar class="ml-5 p-0 mt-0" fixed="top">
+      <img src="img/logo-topleft.jpg" class="pull-left logo" />
+    </b-navbar>
+    <div class="nav_buttons" style="display: none">
       <ul>
         <li>
           <i id="dot_1" class="fa fa-circle nav_active" aria-hidden="true"></i>
@@ -14,81 +14,44 @@
         <li><i id="dot_5" class="fa fa-circle" aria-hidden="true"></i></li>
       </ul>
     </div>
-    <div class="nav_down">
+    <div class="nav_down" style="display: none">
       <i class="fa fa-chevron-circle-down fa-3x" aria-hidden="true"></i>
     </div>
     <div id="owl-example" class="owl-carousel wrap">
-      <div>
-        <img
-          src="<?php echo 'data:image;base64,'.base64_encode(file_get_contents('img/carousel-img01.jpg')) ?>"
-          class="carousel_cover_img hide-m-portrait hidden-sm"
-          alt="3Arts Marriage Category Desktop Cover Picture"
-        />
-        <img
-          src="<?php echo 'data:image;base64,'.base64_encode(file_get_contents('img/mv_carousel01.jpg')) ?>"
-          class="carousel_cover_img hide-m-landscape hide-desktop"
-          alt="3Arts Marriage Category Mobile Cover Picture"
-        />
-        <div class="carousel-caption">
-          <h1>A Moment Meant to Be…...</h1>
-          <img
-            src="<?php echo 'data:image;base64,'.base64_encode(file_get_contents('img/divider01.png')) ?>"
-            alt=""
-          />
-          <p>
-            It Just Got to Be One, <br />
-            Just You & Me...
-          </p>
-        </div>
-      </div>
-      <div>
-        <img
-          src="<?php echo 'data:image;base64,'.base64_encode(file_get_contents('img/carousel-img002.jpg')) ?>"
-          class="carousel_cover_img hide-m-portrait hidden-sm"
-          alt="3Arts Senior Category Desktop Cover Picture"
-        />
-        <img
-          src="<?php echo 'data:image;base64,'.base64_encode(file_get_contents('img/mv_carousel02.jpg')) ?>"
-          class="carousel_cover_img hide-m-landscape hide-desktop"
-          alt="3Arts Senior Category Mobile Cover Picture"
-        />
-        <div class="carousel-caption">
-          <h1>Looking Back in Time….</h1>
-          <img
-            src="<?php echo 'data:image;base64,'.base64_encode(file_get_contents('img/divider01.png')) ?>"
-            alt=""
-          />
-          <p>All We Adore is That One Graceful Smile……</p>
-        </div>
-      </div>
-      <div>
-        <img
-          src="<?php echo 'data:image;base64,'.base64_encode(file_get_contents('img/carousel-img03.jpg')) ?>"
-          class="carousel_cover_img hide-m-portrait hidden-sm"
-          alt="3Arts Young Ones Category Desktop Cover Picture"
-        />
-        <img
-          src="<?php echo 'data:image;base64,'.base64_encode(file_get_contents('img/mv_carousel03.jpg')) ?>"
-          class="carousel_cover_img hide-m-landscape hide-desktop"
-          alt="3Arts Young Ones Category Mobile Cover Picture"
-        />
-        <div class="carousel-caption">
-          <h1><b>W.A.Y.O!</b> We Are Young Once!</h1>
-          <img
-            src="<?php echo 'data:image;base64,'.base64_encode(file_get_contents('img/divider01.png')) ?>"
-            alt=""
-          />
-          <p>Never Ever Replaceable in Us…...</p>
-        </div>
-      </div>
+      <b-carousel :interval="4000" id="carousel-1" controls>
+        <b-carousel-slide img-src="img/carousel-img01.jpg">
+          <div class="carousel-caption">
+            <h1>A Moment Meant to Be…...</h1>
+            <img src="img/divider01.png" alt="" />
+            <p>
+              It Just Got to Be One, <br />
+              Just You & Me...
+            </p>
+          </div>
+        </b-carousel-slide>
+        <b-carousel-slide img-src="img/carousel-img002.jpg">
+          <div class="carousel-caption">
+            <h1>Looking Back in Time….</h1>
+            <img src="img/divider01.png" alt="" />
+            <p>All We Adore is That One Graceful Smile……</p>
+          </div>
+        </b-carousel-slide>
+        <b-carousel-slide img-src="img/carousel-img03.jpg">
+          <div class="carousel-caption">
+            <h1><b>W.A.Y.O!</b> We Are Young Once!</h1>
+            <img src="img/divider01.png" alt="" />
+            <p>Never Ever Replaceable in Us…...</p>
+          </div>
+        </b-carousel-slide>
+      </b-carousel>
     </div>
     <!--
          <div class="NE" >
         <div class="NE_header">
             <h1>National Day Event</h1>
-            <img src="<?php echo 'data:image;base64,'.base64_encode(file_get_contents('img/divider02.png')) ?>" alt="" class="black_divider">
+            <img src="img/divider02.png" alt="" class="black_divider">
             <h2>Scan, As One</h2>
-            <img src="<?php echo 'data:image;base64,'.base64_encode(file_get_contents('img/NE/website/51-heart.png')) ?>" class="NE_hearts hidden-xs" alt="3Arts National Day Event Heart Logo">
+            <img src="img/NE/website/51-heart.png" class="NE_hearts hidden-xs" alt="3Arts National Day Event Heart Logo">
 
         </div>
     <div class="NE_content">
@@ -166,16 +129,12 @@
       </video>
       <img
         class="visible-xs"
-        src="<?php echo 'data:image;base64,'.base64_encode(file_get_contents('img/mv_video-screenshot.jpg')) ?>"
+        src="img/mv_video-screenshot.jpg"
         alt="3Arts Family Video Image"
       />
       <figure class="aboutUs_caption">
         <h1>About Us</h1>
-        <img
-          src="<?php echo 'data:image;base64,'.base64_encode(file_get_contents('img/divider02.png')) ?>"
-          alt=""
-          class="black_divider"
-        />
+        <img src="img/divider02.png" alt="" class="black_divider" />
         <p>
           3Arts Concept is founded with the vision to pioneer a facelift towards
           collective memories! Valuable memories belonging to every individual
@@ -196,7 +155,8 @@
 
         <h2>System Collaboration:</h2>
         <img
-          src="<?php echo 'data:image;base64,'.base64_encode(file_get_contents('img/volunex-logo.png')) ?>"
+          @click="showProductModal"
+          src="img/volunex-logo.png"
           class="partner"
           data-toggle="modal"
           data-target="#partnerModal"
@@ -205,105 +165,125 @@
       </figure>
     </div>
     <div class="product wrap" id="product">
-      <div class="col-md-5 product_description">
-        <h1>Services</h1>
-        <img
-          src="<?php echo 'data:image;base64,'.base64_encode(file_get_contents('img/divider02.png')) ?>"
-          alt=""
-          class="black_divider"
-        />
-        <h2>Individual and Family Series</h2>
+      <div class="row">
+        <div class="col-md-5 product_description">
+          <h1>Services</h1>
+          <img src="img/divider02.png" alt="" class="black_divider" />
+          <h2>Individual and Family Series</h2>
 
-        <p>
-          3Arts Concept offers the option of creating 3D Showcases displaying
-          lifetime memories for families or individuals who want to credit
-          themselves over certain achievements of their own. We listen to what
-          you need and provide a (detail to detail) illustration as our
-          sophisticated handcrafted product.
-        </p>
+          <p>
+            3Arts Concept offers the option of creating 3D Showcases displaying
+            lifetime memories for families or individuals who want to credit
+            themselves over certain achievements of their own. We listen to what
+            you need and provide a (detail to detail) illustration as our
+            sophisticated handcrafted product.
+          </p>
 
-        <h2>Business and Corporate Series</h2>
-        <p>
-          Acknowledging that Business Branding is essential in today’s modern
-          time, we allow businesses and companies to be able to further portray
-          their significant industry through our Professional Business Showcases
-          that enable greater customer catchment and awareness. Ideal for
-          Businesses of a long family history to commemorate the value it
-          represents.
-        </p>
+          <h2>Business and Corporate Series</h2>
+          <p>
+            Acknowledging that Business Branding is essential in today’s modern
+            time, we allow businesses and companies to be able to further
+            portray their significant industry through our Professional Business
+            Showcases that enable greater customer catchment and awareness.
+            Ideal for Businesses of a long family history to commemorate the
+            value it represents.
+          </p>
 
-        <h2>Event Involvement</h2>
-        <p>
-          3Arts Concept caters rental of equipment such as our own 3D Scanner
-          for events/roadshows subjecting to the relevance of the event. A total
-          new experience for guests at your event. Guests are able to capture a
-          3D Scan of themselves which could be a first time experience and
-          further create a more valuable purpose to the event respectively.
-        </p>
-        <p>
-          We protect our client profile to assure authenticity of the showcase
-          which enables client to feel what they now own is of value and solely
-          theirs.
-        </p>
-        <!-- <button class="btn btn_contact">See More</button> -->
-      </div>
-      <div class="col-md-7">
-        <div class="row no-gutter product_wrap_50">
-          <div class="col-ms-6 product_box">
-            <figure
-              class="product_box_caption"
-              data-toggle="modal"
-              data-target="#childModal"
-            >
-              <figcaption>
-                <h1>Young Ones</h1>
-              </figcaption>
-            </figure>
-            <img src="img/child.jpg" alt="3Arts Young Ones Category" />
-          </div>
-          <div class="col-ms-6 product_box">
-            <figure
-              class="product_box_caption"
-              data-toggle="modal"
-              data-target="#weddingModal"
-            >
-              <figcaption>
-                <h1>Wedding</h1>
-              </figcaption>
-            </figure>
-            <img src="img/two-thumbs.jpg" alt="3Arts Wedding Category" />
-          </div>
+          <h2>Event Involvement</h2>
+          <p>
+            3Arts Concept caters rental of equipment such as our own 3D Scanner
+            for events/roadshows subjecting to the relevance of the event. A
+            total new experience for guests at your event. Guests are able to
+            capture a 3D Scan of themselves which could be a first time
+            experience and further create a more valuable purpose to the event
+            respectively.
+          </p>
+          <p>
+            We protect our client profile to assure authenticity of the showcase
+            which enables client to feel what they now own is of value and
+            solely theirs.
+          </p>
+          <!-- <button class="btn btn_contact">See More</button> -->
         </div>
-        <div class="row no-gutter product_wrap_50">
-          <div class="col-ms-6 product_box">
-            <figure
-              class="product_box_caption"
-              data-toggle="modal"
-              data-target="#portraitModal"
-            >
-              <figcaption>
-                <h1>Individual Portrait</h1>
-              </figcaption>
-            </figure>
-            <img
-              src="img/indian-female.jpg"
-              alt="3Arts Individual Portrait Category"
-            />
+        <!-- START Modal for product -->
+        <b-modal size="lg" id="modal-1" v-model="productModal" hide-footer>
+          <template #modal-title>
+            <div class="modal-header">
+              <!-- <button
+                type="button"
+                @click="productModal = !productModal"
+                class="close"
+              >
+                &times;
+              </button> -->
+              <h4 class="modal-title">{{ header }}</h4>
+            </div>
+          </template>
+          <div class="modal-body">
+            <b-img :src="image" :alt="alt" rounded="circle"></b-img>
+            <p v-html="content" class="mt-4"></p>
           </div>
-          <div class="col-ms-6 product_box">
-            <figure
-              class="product_box_caption"
-              data-toggle="modal"
-              data-target="#corporateModal"
-            >
-              <figcaption>
-                <h1>Corporate branding</h1>
-              </figcaption>
-            </figure>
-            <img
-              src="img/man-woman.jpg"
-              alt="3Arts Corporate Branding Category"
-            />
+        </b-modal>
+        <!-- END Modal for product -->
+
+        <div class="col-md-7">
+          <div class="row no-gutter product_wrap_50">
+            <div class="col-ms-6 product_box" @click="showModal('child')">
+              <figure
+                class="product_box_caption"
+                data-toggle="modal"
+                data-target="#childModal"
+              >
+                <figcaption>
+                  <h1>Young Ones</h1>
+                </figcaption>
+              </figure>
+              <img src="img/child.jpg" alt="3Arts Young Ones Category" />
+            </div>
+            <div class="col-ms-6 product_box" @click="showModal('wedding')">
+              <figure
+                class="product_box_caption"
+                data-toggle="modal"
+                data-target="#weddingModal"
+              >
+                <figcaption>
+                  <h1>Wedding</h1>
+                </figcaption>
+              </figure>
+              <img src="img/two-thumbs.jpg" alt="3Arts Wedding Category" />
+            </div>
+          </div>
+          <div class="row no-gutter product_wrap_50">
+            <div class="col-ms-6 product_box" @click="showModal('portrait')">
+              <figure
+                class="product_box_caption"
+                data-toggle="modal"
+                data-target="#portraitModal"
+              >
+                <figcaption>
+                  <h1>Individual Portrait</h1>
+                </figcaption>
+              </figure>
+              <img
+                src="img/indian-female.jpg"
+                alt="3Arts Individual Portrait Category"
+              />
+            </div>
+            <div class="col-ms-6 product_box" @click="showModal('corporate')">
+              <figure
+                class="product_box_caption"
+                data-toggle="modal"
+                data-target="#corporateModal"
+              >
+                <figcaption>
+                  <h1>Corporate branding</h1>
+                </figcaption>
+              </figure>
+              <img
+                src="img/man-woman.jpg"
+                alt="3Arts Corporate Branding Category"
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -337,161 +317,579 @@
       </div>
     </div>
     <div class="steps" id="3steps">
-      <div class="col-md-5 steps_description">
-        <div class="steps_content">
-          <h1>Price & Progress</h1>
-          <img src="img/divider02.png" alt="" class="black_divider" />
-          <p>
-            <b>Selfie Impression Figurine</b>
-          </p>
-          <p>
-            <b>3D Sandstone Printed</b><br />
-            (20 cm in height) $620* <br />
-            (12 cm in height) $380*
-            <br /><br />
-            *For Impression Figurine Only
-          </p>
+      <div class="row" style="height: 100%">
+        <div class="col-md-5 steps_description">
+          <div class="steps_content">
+            <h1>Price & Progress</h1>
+            <img src="img/divider02.png" alt="" class="black_divider" />
+            <p>
+              <b>Selfie Impression Figurine</b>
+            </p>
+            <p>
+              <b>3D Sandstone Printed</b><br />
+              (20 cm in height) $620* <br />
+              (12 cm in height) $380*
+              <br /><br />
+              *For Impression Figurine Only
+            </p>
+          </div>
         </div>
-      </div>
-      <div class="col-md-7 steps_instructions">
-        <div id="owl-demo" class="owl-carousel owl-theme steps-carousel">
-          <div class="item">
-            <img
-              src="/img/steps/step1.jpg"
-              alt="3Arts 3D Model Scanning instruction step1"
-            />
-          </div>
-          <div class="item">
-            <img
-              src="/img/steps/step2.jpg"
-              alt="3Arts 3D Model Scanning instruction step 2"
-            />
-          </div>
-          <div class="item">
-            <img
-              src="/img/steps/step3.jpg"
-              alt="3Arts 3D Model Scanning instruction step3"
-            />
-          </div>
+        <div class="col-md-7 steps_instructions">
+          <b-carousel :interval="4000" id="carousel-1" controls indicators>
+            <b-carousel-slide img-src="/img/steps/step1.jpg"></b-carousel-slide>
+            <b-carousel-slide img-src="/img/steps/step2.jpg"></b-carousel-slide>
+            <b-carousel-slide img-src="/img/steps/step3.jpg"></b-carousel-slide>
+          </b-carousel>
         </div>
       </div>
     </div>
     <div class="contactUs wrap" id="contact">
       <div class="height_100">
-        <div class="col-md-6 height_100 map_wrapper">
-          <div id="map"></div>
+        <div class="row">
+          <b-col lg="6" md="12">
+            <div id="map"></div>
+          </b-col>
+          <b-col lg="6" md="12">
+            <div class="contactUs_wrapper">
+              <h1>Contact</h1>
+              <img src="img/divider02.png" alt="" class="black_divider" />
+              <b-form @submit="submitForm()">
+                <b-form-group
+                  style="text-align: left"
+                  id="input-group-2"
+                  label="Your Name:"
+                  label-for="input-2"
+                >
+                  <b-form-input
+                    id="input-2"
+                    v-model="contact.name"
+                    placeholder="Enter name"
+                    required
+                  ></b-form-input>
+                </b-form-group>
+
+                <b-form-group
+                  style="text-align: left"
+                  id="input-group-1"
+                  label="Email address:"
+                  label-for="input-1"
+                  description="We'll never share your email with anyone else."
+                >
+                  <b-form-input
+                    id="input-1"
+                    v-model="contact.email"
+                    type="email"
+                    placeholder="Enter email"
+                    required
+                  ></b-form-input>
+                </b-form-group>
+                <b-form-group
+                  style="text-align: left"
+                  id="input-group-3"
+                  label="Message"
+                  label-for="input-3"
+                  description="We'll never share your email with anyone else."
+                >
+                  <b-form-textarea
+                    id="input-3"
+                    v-model="contact.message"
+                    placeholder="Enter something..."
+                    rows="3"
+                    max-rows="6"
+                  ></b-form-textarea>
+                </b-form-group>
+
+                <button type="submit" class="btn_contact btn">SEND</button>
+              </b-form>
+            </div>
+          </b-col>
+       
         </div>
-        <div class="col-md-6 contactUs_form height_100">
-          <div class="contactUs_wrapper">
-            <h1>Contact</h1>
-            <img src="img/divider02.png" alt="" class="black_divider" />
-            <div
-              class="form-group input_wrapper"
-              :class="{ 'has-error': error.Name }"
-            >
-              <input
-                type="text"
-                placeholder="Name*"
-                class="form-control"
-                v-model="Name"
-                @keyup="removeError('Name')"
-              />
-              <span class="input_error" v-if="error.Name"
-                >Name is required</span
-              >
-            </div>
-            <div
-              class="form-group input_wrapper"
-              :class="{ 'has-error': error.Email || error.EmailFormat }"
-            >
-              <input
-                type="text"
-                placeholder="Email*"
-                class="form-control"
-                v-model="Email"
-                @keyup="removeError('Email')"
-              />
-              <span class="input_error" v-if="error.Email"
-                >Email is required</span
-              >
-              <span class="input_error" v-if="error.EmailFormat"
-                >Invalid Email Format</span
-              >
-            </div>
-            <div
-              class="form-group input_wrapper"
-              :class="{ 'has-error': error.Number || error.MinNumber }"
-            >
-              <input
-                type="text"
-                placeholder="Contact*"
-                class="form-control"
-                v-model="Number"
-                @keyup="isNumber()"
-                @keydown="isNumber()"
-              />
-              <span class="input_error" v-if="error.Number"
-                >Number is required</span
-              >
-              <span class="input_error" v-if="error.MinNumber"
-                >The Valid format is minimally 8 Numbers</span
-              >
-            </div>
-            <div
-              class="form-group input_wrapper"
-              :class="{ 'has-error': error.Message }"
-            >
-              <textarea
-                rows="8"
-                placeholder="Message"
-                class="form-control"
-                v-model="Message"
-                @keyup="removeError('Message')"
-              ></textarea>
-              <span class="input_error" v-if="error.Message"
-                >Message is required</span
-              >
-            </div>
-            <button class="btn btn_contact" @click="submitForm()">SEND</button>
-          </div>
-        </div>
-        <footer class="col-xs-12">
-          <div class="row">
-            <a
-              href="https://www.facebook.com/3artsconcept/?fref=ts"
-              target="_blank"
-              ><i class="fa fa-facebook" aria-hidden="true"></i
-            ></a>
-            <a href="https://www.instagram.com/3artsconcept/" target="_blank"
-              ><i class="fa fa-instagram" aria-hidden="true"></i
-            ></a>
-          </div>
-          <div class="row copyright">
-            <div class="col-xs-6 text-right">3Arts Concept &#169;</div>
-            <div class="col-xs-6 text-left">All Rights Reserved</div>
-          </div>
+        <footer>
+          <a
+            class="mr-4"
+            href="https://www.facebook.com/3artsconcept/?fref=ts"
+            target="_blank"
+          >
+            <i class="fab fa-facebook-square fa-2x" aria-hidden="true"></i>
+          </a>
+          <a href="https://www.instagram.com/3artsconcept/" target="_blank">
+            <i class="fab fa-instagram-square fa-2x" aria-hidden="true"></i>
+          </a>
+          <b-row style="text-align: center">
+            <b-col>
+              <h6>3Arts Concept &#169; | All Rights Reserved</h6>
+            </b-col>
+          </b-row>
         </footer>
       </div>
     </div>
-    <popup type="wedding" />
-    <popup type="child" />
-    <popup type="portrait" />
-    <popup type="corporate" />
-    <partner-popup />
+    <!-- START Modal for partner -->
+    <b-modal
+      size="xl"
+      id="modal-1"
+      v-model="partnerModal"
+      hide-header
+      hide-footer
+    >
+      <div>
+        <b-tabs content-class="mt-3">
+          <b-tab title="Introduction" active
+            ><h1>Volunex Introduction</h1>
+            <img
+              src="/img/volunex-logo.png"
+              class="partner"
+              alt="3Arts Partner Volunex Popup Logo" />
+            <p>
+              Volunex Pte Ltd is a fast growing Singapore based company that
+              started designing and manufacturing affordable, easy-to- use,
+              robust and ready-to- print personal 3D printer. We have a
+              dedicated team with multi-disciplinary engineering expertise such
+              as Robotics, Mechatronics, Instrumentation, Process Control and
+              Computer Software. At Volunex, we are strongly committed to offer
+              consumer a high quality and cost-effective 3D printing solutions
+              with the spirit of the free software movement. Eventually, we
+              strive to make personal 3D printing a better experience,
+              accessible to anyone at an affordable price.
+              <br /><br />
+              Our 3D printers allow one to explore their creativity and
+              imagination to design and manufacture virtually anywhere using 3D
+              printing technology, whether short-run manufacturing or rapid
+              prototyping to make a three-dimensional solid object of virtually
+              any shape.
+              <br /><br /></p
+          ></b-tab>
+          <b-tab title="i3 MINI KIT">
+            <b-row>
+              <b-col md="12" sm="12" lg="5"
+                ><b-carousel
+                  class="product-carousel"
+                  indicators
+                  :interval="4000"
+                  controls
+                >
+                  <b-carousel-slide
+                    img-src="/img/printer1a.jpg"
+                    id="partner-product"
+                  ></b-carousel-slide>
+                  <b-carousel-slide
+                    img-src="/img/printer1b.jpg"
+                    id="partner-product"
+                  ></b-carousel-slide>
+                  <b-carousel-slide
+                    img-src="/img/printer1c.jpg"
+                    id="partner-product"
+                  ></b-carousel-slide> </b-carousel
+              ></b-col>
+              <b-col md="12" sm="12" lg="7">
+                <b-card bg-variant="light" no-body>
+                  <b-card-text class="p-2">
+                    <b-row no-gutters>
+                      <b-col>
+                        <b-list-group>
+                          <b-list-group-item
+                            ><b>Print Technology</b><br />
+                            <span
+                              >Fused Filament Fabrication</span
+                            ></b-list-group-item
+                          >
+                          <b-list-group-item>
+                            <b>AC Power Input</b><br />
+                            <span>120/240 Volts</span></b-list-group-item
+                          >
+                          <b-list-group-item>
+                            <b>Operating System</b><br />
+                            <span
+                              >Windows/ Mac OS/ Linux</span
+                            ></b-list-group-item
+                          >
+                          <b-list-group-item
+                            ><b>Heater Bed</b><br />
+                            <span>Not Applicable</span></b-list-group-item
+                          >
+                          <b-list-group-item>
+                            <b>Printing Area</b><br />
+                            <span
+                              >120mm(L) x 120mm(W) x 100mm(H)</span
+                            ></b-list-group-item
+                          >
+                          <b-list-group-item>
+                            <b>Printing Nozzle Size</b><br />
+                            <span>0.4mm</span></b-list-group-item
+                          >
+                          <b-list-group-item
+                            ><b>Connectivity</b><br />
+                            <span
+                              >USB, SD Memory Card, LCD Control Panel</span
+                            ></b-list-group-item
+                          >
+                          <b-list-group-item>
+                            <b>Options</b><br />
+                            <span
+                              >Wireless, Auto Bed Leveling</span
+                            ></b-list-group-item
+                          >
+                        </b-list-group>
+                      </b-col>
+                      <b-col>
+                        <b-list-group>
+                          <b-list-group-item
+                            ><b>Print File Format</b><br />
+                            <span
+                              >STL (STereoLithography)</span
+                            ></b-list-group-item
+                          >
+                          <b-list-group-item>
+                            <b>Print Filament Dia.</b><br />
+                            <span>1.75mm</span></b-list-group-item
+                          >
+                          <b-list-group-item>
+                            <b>Layer Resolution</b><br />
+                            <span>0.100 mm - 0.300 mm</span></b-list-group-item
+                          >
+                          <b-list-group-item
+                            ><b>Printer Fillament Type</b><br />
+                            <span>PLA</span></b-list-group-item
+                          >
+                        </b-list-group>
+                      </b-col>
+                    </b-row>
+                  </b-card-text>
+                </b-card>
+              </b-col>
+            </b-row>
+          </b-tab>
+          <b-tab title="MARS Series">
+            <b-row>
+              <b-col md="12" sm="12" lg="5"
+                ><b-carousel
+                  class="product-carousel"
+                  indicators
+                  :interval="4000"
+                  controls
+                >
+                  <b-carousel-slide
+                    img-src="/img/printer2a.jpg"
+                    id="partner-product"
+                  ></b-carousel-slide>
+                  <b-carousel-slide
+                    img-src="/img/printer2b.jpg"
+                    id="partner-product"
+                  ></b-carousel-slide>
+                  <b-carousel-slide
+                    img-src="/img/printer2c.jpg"
+                    id="partner-product"
+                  ></b-carousel-slide> </b-carousel
+              ></b-col>
+              <b-col md="12" sm="12" lg="7">
+                <b-card bg-variant="light" no-body>
+                  <b-card-text class="p-2">
+                    <b-row no-gutters>
+                      <b-col>
+                        <b-list-group>
+                          <b-list-group-item>
+                            <b>Print Technology</b>
+                            <br />
+                            <span>Fused Filament Fabrication</span>
+                          </b-list-group-item>
+                          <b-list-group-item>
+                            <b>AC Power Input</b><br />
+                            <span>120/240 Volts</span></b-list-group-item
+                          >
+                          <b-list-group-item>
+                            <b>Operating System</b><br />
+                            <span
+                              >Windows/ Mac OS/ Linux</span
+                            ></b-list-group-item
+                          >
+                          <b-list-group-item
+                            ><b>Heater Bed</b><br />
+                            <span>Yes</span></b-list-group-item
+                          >
+                          <b-list-group-item>
+                            <b>Printing Area</b><br />
+                            <span
+                              >300mm(L) x 200mm(W) x 200mm(H) (Height
+                              Customizable)</span
+                            ></b-list-group-item
+                          >
+                          <b-list-group-item>
+                            <b>Printing Nozzle Size</b><br />
+                            <span>0.2mm or 0.4mm</span></b-list-group-item
+                          >
+                          <b-list-group-item
+                            ><b>Connectivity</b><br />
+                            <span
+                              >USB, SD Memory Card, LCD Control Panel</span
+                            ></b-list-group-item
+                          >
+                          <b-list-group-item>
+                            <b>Options</b><br />
+                            <span
+                              >Wireless, Auto Bed Leveling</span
+                            ></b-list-group-item
+                          >
+                        </b-list-group>
+                      </b-col>
+                      <b-col>
+                        <b-list-group>
+                          <b-list-group-item
+                            ><b>Print File Format</b><br />
+                            <span
+                              >STL (STereoLithography)</span
+                            ></b-list-group-item
+                          >
+                          <b-list-group-item>
+                            <b>Print Filament Dia.</b><br />
+                            <span>1.75mm</span></b-list-group-item
+                          >
+                          <b-list-group-item>
+                            <b>Layer Resolution</b><br />
+                            <span>0.100 mm - 0.300 mm</span></b-list-group-item
+                          >
+                          <b-list-group-item
+                            ><b>Printer Fillament Type</b><br />
+                            <span>PLA, ABS, PET</span></b-list-group-item
+                          >
+                        </b-list-group>
+                      </b-col>
+                    </b-row>
+                  </b-card-text>
+                </b-card>
+              </b-col>
+            </b-row>
+          </b-tab>
+          <b-tab title="LUNAR">
+            <b-row>
+              <b-col md="12" sm="12" lg="5"
+                ><b-carousel
+                  class="product-carousel"
+                  indicators
+                  :interval="4000"
+                  controls
+                >
+                  <b-carousel-slide
+                    img-src="/img/printer3a.jpg"
+                    id="partner-product"
+                  ></b-carousel-slide>
+                  <b-carousel-slide
+                    img-src="/img/printer3b.jpg"
+                    id="partner-product"
+                  ></b-carousel-slide>
+                  <b-carousel-slide
+                    img-src="/img/printer3c.jpg"
+                    id="partner-product"
+                  ></b-carousel-slide>
+                  <b-carousel-slide
+                    img-src="/img/printer3d.jpg"
+                    id="partner-product"
+                  ></b-carousel-slide> </b-carousel
+              ></b-col>
+              <b-col md="12" sm="12" lg="7">
+                <b-card bg-variant="light" no-body>
+                  <b-card-text class="p-2">
+                    <b-row no-gutters>
+                      <b-col>
+                        <b-list-group>
+                          <b-list-group-item
+                            ><b>Print Technology</b><br />
+                            <span
+                              >Fused Filament Fabrication</span
+                            ></b-list-group-item
+                          >
+                          <b-list-group-item>
+                            <b>AC Power Input</b><br />
+                            <span>120/240 Volts</span></b-list-group-item
+                          >
+                          <b-list-group-item>
+                            <b>Operating System</b><br />
+                            <span
+                              >Windows/ Mac OS/ Linux</span
+                            ></b-list-group-item
+                          >
+                          <b-list-group-item
+                            ><b>Heater Bed</b><br />
+                            <span>Not Applicable</span></b-list-group-item
+                          >
+                          <b-list-group-item>
+                            <b>Printing Area</b><br />
+                            <span
+                              >180mm(D) x 110mm(H) (Rotary Base)</span
+                            ></b-list-group-item
+                          >
+                          <b-list-group-item>
+                            <b>Printing Nozzle Size</b><br />
+                            <span>0.2mm or 0.4mm</span></b-list-group-item
+                          >
+                          <b-list-group-item
+                            ><b>Connectivity</b><br />
+                            <span
+                              >USB, SD Memory Card, LCD Control Panel</span
+                            ></b-list-group-item
+                          >
+                          <b-list-group-item>
+                            <b>Options</b><br />
+                            <span>Wireless</span></b-list-group-item
+                          >
+                        </b-list-group>
+                      </b-col>
+                      <b-col>
+                        <b-list-group>
+                          <b-list-group-item
+                            ><b>Print File Format</b><br />
+                            <span
+                              >STL (STereoLithography)</span
+                            ></b-list-group-item
+                          >
+                          <b-list-group-item>
+                            <b>Print Filament Dia.</b><br />
+                            <span>1.75mm</span></b-list-group-item
+                          >
+                          <b-list-group-item>
+                            <b>Layer Resolution</b><br />
+                            <span>0.100 mm - 0.300 mm</span></b-list-group-item
+                          >
+                          <b-list-group-item
+                            ><b>Printer Fillament Type</b><br />
+                            <span>PLA</span></b-list-group-item
+                          >
+                        </b-list-group>
+                      </b-col>
+                    </b-row>
+                  </b-card-text>
+                </b-card>
+              </b-col>
+            </b-row>
+          </b-tab>
+          <b-tab title="VENUS">
+            <b-row>
+              <b-col md="12" sm="12" lg="5"
+                ><b-carousel
+                  class="product-carousel"
+                  indicators
+                  :interval="4000"
+                  controls
+                >
+                  <b-carousel-slide
+                    img-src="/img/printer4a.jpg"
+                    id="partner-product"
+                  ></b-carousel-slide>
+                  <b-carousel-slide
+                    img-src="/img/printer4b.jpg"
+                    id="partner-product"
+                  ></b-carousel-slide>
+                  <b-carousel-slide
+                    img-src="/img/printer4c.jpg"
+                    id="partner-product"
+                  ></b-carousel-slide> </b-carousel
+              ></b-col>
+              <b-col md="12" sm="12" lg="7">
+                <b-card bg-variant="light" no-body>
+                  <b-card-text class="p-2">
+                    <b-row no-gutters>
+                      <b-col>
+                        <b-list-group>
+                          <b-list-group-item
+                            ><b>Print Technology</b><br />
+                            <span
+                              >Fused Filament Fabrication</span
+                            ></b-list-group-item
+                          >
+                          <b-list-group-item>
+                            <b>AC Power Input</b><br />
+                            <span>120/240 Volts</span></b-list-group-item
+                          >
+                          <b-list-group-item>
+                            <b>Operating System</b><br />
+                            <span
+                              >Windows/ Mac OS/ Linux</span
+                            ></b-list-group-item
+                          >
+                          <b-list-group-item
+                            ><b>Heater Bed</b><br />
+                            <span>Yes</span></b-list-group-item
+                          >
+                          <b-list-group-item>
+                            <b>Printing Area</b><br />
+                            <span
+                              >190mm(L) x 190mm(W) x 140mm(H)</span
+                            ></b-list-group-item
+                          >
+                          <b-list-group-item>
+                            <b>Printing Nozzle Size</b><br />
+                            <span>0.2mm or 0.4mm</span></b-list-group-item
+                          >
+                          <b-list-group-item
+                            ><b>Connectivity</b><br />
+                            <span
+                              >USB, SD Memory Card, LCD Control Panel</span
+                            ></b-list-group-item
+                          >
+                          <b-list-group-item>
+                            <b>Options</b><br />
+                            <span>Wireless</span></b-list-group-item
+                          >
+                        </b-list-group>
+                      </b-col>
+                      <b-col>
+                        <b-list-group>
+                          <b-list-group-item
+                            ><b>Print File Format</b><br />
+                            <span
+                              >STL (STereoLithography)</span
+                            ></b-list-group-item
+                          >
+                          <b-list-group-item>
+                            <b>Print Filament Dia.</b><br />
+                            <span>1.75mm</span></b-list-group-item
+                          >
+                          <b-list-group-item>
+                            <b>Layer Resolution</b><br />
+                            <span>0.100 mm - 0.300 mm</span></b-list-group-item
+                          >
+                          <b-list-group-item
+                            ><b>Printer Fillament Type</b><br />
+                            <span>PLA, ABS, PET</span></b-list-group-item
+                          >
+                        </b-list-group>
+                      </b-col>
+                    </b-row>
+                  </b-card-text>
+                </b-card>
+              </b-col>
+            </b-row>
+          </b-tab>
+        </b-tabs>
+      </div>
+    </b-modal>
+    <!-- END Modal for partner -->
   </div>
 </template>
 
 <script>
-import popup from '@/components/old/Popup.vue'
+// import popup from '@/components/old/Popup.vue'
 import partnerPopup from '@/components/old/partnerPopup.vue'
+const map = require('@/utils/map')
 
+// window.onload = function () {
+//   console.log(map);
+//   map()
+// }
 export default {
+  mounted() {
+    setTimeout(map, 2000)
+  },
   data() {
     return {
-      Number: '',
-      Name: '',
-      Email: '',
-      Message: '',
+      partnerModal: false,
+      productModal: false,
+      contact: {
+        name: '',
+        email: '',
+        number: '',
+        message: '',
+      },
+
       error: {
         Name: false,
         Email: false,
@@ -503,78 +901,148 @@ export default {
     }
   },
   components: {
-    popup,
+    // popup,
     partnerPopup,
   },
-  methods: {
-    onSwipeLeft() {
-      console.log('left')
+  computed: {
+    validationName() {
+      return this.contact.name.length > 0
     },
-    isNumber(evt) {
-      this.Number = this.Number.replace(/\D/g, '')
-      if (this.Number != '') {
-        this.error.Number = false
-        if (this.Number.length > 7) {
-          this.error.MinNumber = false
-        }
+
+    id() {
+      return this.type + 'Modal'
+    },
+    alt() {
+      if (this.type == 'wedding') return '3Arts Wedding Category Popup Image'
+      else if (this.type == 'child') return '3Arts Young Ones Popup Image'
+      else if (this.type == 'portrait')
+        return '3Arts Individual Portrait Popup Image'
+      return '3Arts Corportate Branding Category Popup Image'
+    },
+    header() {
+      if (this.type == 'wedding') return 'Wedding'
+      else if (this.type == 'child') return 'Young Ones'
+      else if (this.type == 'portrait') return 'Individual Portrait'
+      return 'Corporate Branding'
+    },
+    image() {
+      if (this.type == 'wedding') return '/img/two-thumbs.jpg'
+      else if (this.type == 'child') return '/img/child.jpg'
+      else if (this.type == 'portrait') return '/img/graduant.jpg'
+      return '/img/man-woman.jpg'
+    },
+    content() {
+      if (this.type == 'wedding') {
+        return '<p> Walking down the aisle hand in hand is blissful, embarking this new chapter in life is challenging, taking the leap of faith takes courage!<br><br> Keep all of these memories together in just one tailor-made showcase meant for just the both of you to reminisce as the years go by!</p>'
+      } else if (this.type == 'child') {
+        return '<p>Children, the innocence and happiness in them goes by much quicker than what we perceive. They are your one and only in the world, capture that one impression of them and it stays.<br><br>Photographs show just a picture; a showcase creates the sense of belonging for your family!</p>'
+      } else if (this.type == 'portrait') {
+        return '<p>“You Only Live Once!” Time to take a step back, it’s time to credit yourself.<br><br>Life’s a quick journey, only if you mark your own checkpoints and celebrate them!<br><br>Achievements not to be forgotten, recognition not to be neglected and significant moments accounted for brings value to you!</p>'
+      } else {
+        return '<p>Branding with an identity marks its position with an indirect edge over competitors for all corporate and businesses.<br><br> Create the uptrend symbolic icon of your products/services for greater values enhanced onto your business.</p>'
       }
+    },
+  },
+  methods: {
+    validationEmail() {
+      let re =
+        /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+      console.log(re.test(this.contact.email))
+      this.error.Email = true
     },
     submitForm() {
-      if (this.Name == '') {
-        this.error.Name = true
-      }
-      if (this.Email == '') {
-        this.error.Email = true
-      } else {
-        var re =
-          /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-        this.error.EmailFormat = !re.test(this.Email)
-      }
-      if (this.Number == '') {
-        this.error.Number = true
-      } else {
-        this.error.MinNumber = this.Number.length < 8
-      }
-      if (this.Message == '') {
-        this.error.Message = true
-      }
-
-      var error = this.error
-      var result = false
-      Object.keys(this.error).map(function (value, index) {
-        if (error[value]) result = true
-      })
-
-      if (!result) {
-        this.$http
-          .get('/send-form.php', {
-            name: this.Name,
-            email: this.Email,
-            message: this.Message,
-            contact: this.Number,
-          })
-          .then((response) => {
-            if (response.ok) {
-              this.Number = ''
-              this.Name = ''
-              this.Email = ''
-              this.Message = ''
-            }
-          })
-      }
-    },
-    removeError(para) {
-      if (this[para] != '') {
-        if (para == 'Email') {
-          this.error[para] = false
-          var re =
-            /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-          if (re.test(this.Email)) {
-            this.error.EmailFormat = false
+      this.$http
+        .get('/send-form.php', {
+          name: this.contact.name,
+          email: this.contact.email,
+          message: this.contact.message,
+          contact: this.contact.number,
+        })
+        .then((response) => {
+          if (response.ok) {
+            this.contact.name = ''
+            this.contact.email = ''
+            this.contact.message = ''
+            this.contact.number = ''
           }
-        } else this.error[para] = false
-      }
+        })
     },
+    showModal(category) {
+      this.productModal = !this.productModal
+      console.log(this.productModal)
+      this.type = category
+    },
+    showProductModal() {
+      this.partnerModal = !this.productModal
+    },
+    // onSwipeLeft() {
+    //   console.log('left')
+    // },
+    // isNumber(evt) {
+    //   this.contact.number = this.Number.replace(/\D/g, '')
+    //   if (this.contact.number != '') {
+    //     this.error.Number = false
+    //     if (this.contact.number.length > 7) {
+    //       this.error.MinNumber = false
+    //     }
+    //   }
+    // },
+    // submitForm() {
+    //   if (this.contact.name == '') {
+    //     this.error.Name = true
+    //   }
+    //   if (this.contact.email == '') {
+    //     this.error.Email = true
+    //   } else {
+    //     var re =
+    //       /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    //     this.error.EmailFormat = !re.test(this.Email)
+    //   }
+    //   if (this.contact.number == '') {
+    //     this.error.Number = true
+    //   } else {
+    //     this.error.MinNumber = this.contact.number.length < 8
+    //   }
+    //   if (this.contact.message == '') {
+    //     this.error.Message = true
+    //   }
+
+    //   var error = this.error
+    //   var result = false
+    //   Object.keys(this.error).map(function (value, index) {
+    //     if (error[value]) result = true
+    //   })
+
+    //   // if (!result) {
+    //   //   this.$http
+    //   //     .get('/send-form.php', {
+    //   //       name: this.Name,
+    //   //       email: this.Email,
+    //   //       message: this.Message,
+    //   //       contact: this.Number,
+    //   //     })
+    //   //     .then((response) => {
+    //   //       if (response.ok) {
+    //   //         this.Number = ''
+    //   //         this.Name = ''
+    //   //         this.Email = ''
+    //   //         this.Message = ''
+    //   //       }
+    //   //     })
+    //   // }
+    // },
+    // removeError(para) {
+    //   if (this[para] != '') {
+    //     if (para == 'Email') {
+    //       this.error[para] = false
+    //       var re =
+    //         /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    //       if (re.test(this.Email)) {
+    //         this.error.EmailFormat = false
+    //       }
+    //     } else this.error[para] = false
+    //   }
+    // },
   },
 }
 </script>
