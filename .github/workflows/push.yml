@@ -1,4 +1,4 @@
-name: 'Build Test'
+name: 'Push Workflow'
 
 on:
   push:
@@ -11,7 +11,7 @@ on:
       - master
 
 jobs:
-  'Build Test':
+  build:
     runs-on: ${{ matrix.os }}
 
     strategy:
