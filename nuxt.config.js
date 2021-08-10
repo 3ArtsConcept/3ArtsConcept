@@ -1,12 +1,18 @@
 import webpack from 'webpack'
 
+const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
+  router: {
+    base: '/3ArtsConcept/'
+  }
+} : {};
+
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: false,
 
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
-
+  // ...routerBase,
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: '3artsconcept',

@@ -2,7 +2,8 @@
 	display: block;
 	position: relative;
 	background-color:#FDFCFF;
-	@media(max-width:991px){min-height:100vh;}	
+	height:100vh;
+	max-height: 750px;
 	img{
 		max-width: 100%;
 	}

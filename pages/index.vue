@@ -117,21 +117,10 @@
         </div>
     </div> -->
     <div class="aboutUs wrap" id="about">
-      <video
-        autoplay="autoplay"
-        loop="loop"
-        poster="/img/vid.jpg"
-        id="bgvid"
-        class="hidden-xs"
-      >
+      <video autoplay loop muted id="bgvid">
         <source src="video/vid.mp4" type="video/mp4" />
         <source src="video/vid.webm" type="video/webm" />
       </video>
-      <img
-        class="visible-xs"
-        src="img/mv_video-screenshot.jpg"
-        alt="3Arts Family Video Image"
-      />
       <figure class="aboutUs_caption">
         <h1 class="header-content">About Us</h1>
         <img src="img/divider02.png" alt="" class="black_divider" />
@@ -316,9 +305,9 @@
         </div>
         <div class="col-md-7 steps_instructions">
           <b-carousel :interval="4000" id="carousel-1" controls indicators>
-            <b-carousel-slide img-src="/img/steps/step1.jpg"></b-carousel-slide>
-            <b-carousel-slide img-src="/img/steps/step2.jpg"></b-carousel-slide>
-            <b-carousel-slide img-src="/img/steps/step3.jpg"></b-carousel-slide>
+            <b-carousel-slide img-src="img/steps/step1.jpg"></b-carousel-slide>
+            <b-carousel-slide img-src="img/steps/step2.jpg"></b-carousel-slide>
+            <b-carousel-slide img-src="img/steps/step3.jpg"></b-carousel-slide>
           </b-carousel>
         </div>
       </div>
@@ -333,7 +322,7 @@
             <div class="contactUs_wrapper">
               <h1 class="header-content">Contact</h1>
               <img src="img/divider02.png" alt="" class="black_divider" />
-              <b-form @submit="submitForm()">
+              <b-form v-on:submit.prevent="submitForm">
                 <b-form-group
                   style="text-align: left"
                   id="input-group-2"
@@ -344,6 +333,20 @@
                     id="input-2"
                     v-model="contact.name"
                     placeholder="Enter name"
+                    required
+                  ></b-form-input>
+                </b-form-group>
+
+                <b-form-group
+                  style="text-align: left"
+                  id="input-group-3"
+                  label="Contract number:"
+                  label-for="input-3"
+                >
+                  <b-form-input
+                    id="input-3"
+                    v-model="contact.number"
+                    placeholder="Contact number:"
                     required
                   ></b-form-input>
                 </b-form-group>
@@ -437,7 +440,7 @@
           <b-tab title="Introduction" active
             ><h1>Volunex Introduction</h1>
             <img
-              src="/img/volunex-logo.png"
+              src="img/volunex-logo.png"
               class="partner"
               alt="3Arts Partner Volunex Popup Logo" />
             <p>
@@ -469,15 +472,15 @@
                   controls
                 >
                   <b-carousel-slide
-                    img-src="/img/printer1a.jpg"
+                    img-src="img/printer1a.jpg"
                     id="partner-product"
                   ></b-carousel-slide>
                   <b-carousel-slide
-                    img-src="/img/printer1b.jpg"
+                    img-src="img/printer1b.jpg"
                     id="partner-product"
                   ></b-carousel-slide>
                   <b-carousel-slide
-                    img-src="/img/printer1c.jpg"
+                    img-src="img/printer1c.jpg"
                     id="partner-product"
                   ></b-carousel-slide> </b-carousel
               ></b-col>
@@ -575,15 +578,15 @@
                   controls
                 >
                   <b-carousel-slide
-                    img-src="/img/printer2a.jpg"
+                    img-src="img/printer2a.jpg"
                     id="partner-product"
                   ></b-carousel-slide>
                   <b-carousel-slide
-                    img-src="/img/printer2b.jpg"
+                    img-src="img/printer2b.jpg"
                     id="partner-product"
                   ></b-carousel-slide>
                   <b-carousel-slide
-                    img-src="/img/printer2c.jpg"
+                    img-src="img/printer2c.jpg"
                     id="partner-product"
                   ></b-carousel-slide> </b-carousel
               ></b-col>
@@ -683,19 +686,19 @@
                   controls
                 >
                   <b-carousel-slide
-                    img-src="/img/printer3a.jpg"
+                    img-src="img/printer3a.jpg"
                     id="partner-product"
                   ></b-carousel-slide>
                   <b-carousel-slide
-                    img-src="/img/printer3b.jpg"
+                    img-src="img/printer3b.jpg"
                     id="partner-product"
                   ></b-carousel-slide>
                   <b-carousel-slide
-                    img-src="/img/printer3c.jpg"
+                    img-src="img/printer3c.jpg"
                     id="partner-product"
                   ></b-carousel-slide>
                   <b-carousel-slide
-                    img-src="/img/printer3d.jpg"
+                    img-src="img/printer3d.jpg"
                     id="partner-product"
                   ></b-carousel-slide> </b-carousel
               ></b-col>
@@ -793,15 +796,15 @@
                   controls
                 >
                   <b-carousel-slide
-                    img-src="/img/printer4a.jpg"
+                    img-src="img/printer4a.jpg"
                     id="partner-product"
                   ></b-carousel-slide>
                   <b-carousel-slide
-                    img-src="/img/printer4b.jpg"
+                    img-src="img/printer4b.jpg"
                     id="partner-product"
                   ></b-carousel-slide>
                   <b-carousel-slide
-                    img-src="/img/printer4c.jpg"
+                    img-src="img/printer4c.jpg"
                     id="partner-product"
                   ></b-carousel-slide> </b-carousel
               ></b-col>
@@ -897,14 +900,9 @@
 </template>
 
 <script>
-// import popup from '@/components/old/Popup.vue'
 import partnerPopup from '@/components/old/partnerPopup.vue'
 const map = require('@/utils/map')
 
-// window.onload = function () {
-//   console.log(map);
-//   map()
-// }
 export default {
   mounted() {
     setTimeout(map, 2000)
@@ -928,6 +926,8 @@ export default {
         MinNumber: false,
         Message: false,
       },
+
+      type: null,
     }
   },
   components: {
@@ -1002,22 +1002,23 @@ export default {
       console.log(re.test(this.contact.email))
       this.error.Email = true
     },
-    submitForm() {
-      this.$http
-        .get('/send-form.php', {
-          name: this.contact.name,
-          email: this.contact.email,
-          message: this.contact.message,
-          contact: this.contact.number,
-        })
-        .then((response) => {
-          if (response.ok) {
-            this.contact.name = ''
-            this.contact.email = ''
-            this.contact.message = ''
-            this.contact.number = ''
-          }
-        })
+    async submitForm() {
+      const response = await fetch('https://usebasin.com/f/9697b92b408a', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        redirect: 'follow',
+        referrerPolicy: 'no-referrer',
+        body: JSON.stringify(this.contact),
+      }).then((response) => {
+        if (response.ok) {
+          this.contact.name = ''
+          this.contact.email = ''
+          this.contact.message = ''
+          this.contact.number = ''
+        }
+      })
     },
     showModal(category) {
       this.productModal = !this.productModal
@@ -1027,74 +1028,6 @@ export default {
     showProductModal() {
       this.partnerModal = !this.productModal
     },
-    // onSwipeLeft() {
-    //   console.log('left')
-    // },
-    // isNumber(evt) {
-    //   this.contact.number = this.Number.replace(/\D/g, '')
-    //   if (this.contact.number != '') {
-    //     this.error.Number = false
-    //     if (this.contact.number.length > 7) {
-    //       this.error.MinNumber = false
-    //     }
-    //   }
-    // },
-    // submitForm() {
-    //   if (this.contact.name == '') {
-    //     this.error.Name = true
-    //   }
-    //   if (this.contact.email == '') {
-    //     this.error.Email = true
-    //   } else {
-    //     var re =
-    //       /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-    //     this.error.EmailFormat = !re.test(this.Email)
-    //   }
-    //   if (this.contact.number == '') {
-    //     this.error.Number = true
-    //   } else {
-    //     this.error.MinNumber = this.contact.number.length < 8
-    //   }
-    //   if (this.contact.message == '') {
-    //     this.error.Message = true
-    //   }
-
-    //   var error = this.error
-    //   var result = false
-    //   Object.keys(this.error).map(function (value, index) {
-    //     if (error[value]) result = true
-    //   })
-
-    //   // if (!result) {
-    //   //   this.$http
-    //   //     .get('/send-form.php', {
-    //   //       name: this.Name,
-    //   //       email: this.Email,
-    //   //       message: this.Message,
-    //   //       contact: this.Number,
-    //   //     })
-    //   //     .then((response) => {
-    //   //       if (response.ok) {
-    //   //         this.Number = ''
-    //   //         this.Name = ''
-    //   //         this.Email = ''
-    //   //         this.Message = ''
-    //   //       }
-    //   //     })
-    //   // }
-    // },
-    // removeError(para) {
-    //   if (this[para] != '') {
-    //     if (para == 'Email') {
-    //       this.error[para] = false
-    //       var re =
-    //         /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-    //       if (re.test(this.Email)) {
-    //         this.error.EmailFormat = false
-    //       }
-    //     } else this.error[para] = false
-    //   }
-    // },
   },
 }
 </script>
