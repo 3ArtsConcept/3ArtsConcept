@@ -349,18 +349,18 @@
 </template>
 
 <script type="text/javascript">
-    window.$ = window.jQuery = require('jquery')
-    var owl = require('owl.carousel/src/js/owl.carousel.js')
+    // window.$ = window.jQuery = require('jquery')
+    // var owl = require('owl.carousel/src/js/owl.carousel.js')
     var VueStrap = require('vue-strap/dist/vue-strap.min.js');
 
     export default {
         ready(){
-            $(".product-carousel").owlCarousel({
-                pagination : true, 
-                slideSpeed : 300,
-                paginationSpeed : 400,
-                singleItem:true
-            });
+            // $(".product-carousel").owlCarousel({
+            //     pagination : true, 
+            //     slideSpeed : 300,
+            //     paginationSpeed : 400,
+            //     singleItem:true
+            // });
         },
         data(){
             return {
