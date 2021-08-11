@@ -1,18 +1,12 @@
 import webpack from 'webpack'
 
-const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
-  router: {
-    base: '/3ArtsConcept/'
-  }
-} : {};
-
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: false,
 
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
-  // ...routerBase,
+
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: '3artsconcept',
@@ -74,8 +68,15 @@ export default {
       },
     ],
     link: [
-      {rel:"stylesheet", href:"https://use.fontawesome.com/releases/v5.15.1/css/all.css", integrity:"sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp", crossorigin:"anonymous"},
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+      {
+        rel: 'stylesheet',
+        href: 'https://use.fontawesome.com/releases/v5.15.1/css/all.css',
+        integrity:
+          'sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp',
+        crossorigin: 'anonymous',
+      },
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+    ],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css

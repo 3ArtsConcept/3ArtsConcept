@@ -21,7 +21,7 @@
       <b-carousel :interval="4000" id="carousel-1" controls>
         <b-carousel-slide img-src="img/carousel-img01.jpg">
           <div class="carousel-caption">
-            <h1>A Moment Meant to Be…...</h1>
+            <h1 class="header-content">A Moment Meant to Be…...</h1>
             <img src="img/divider01.png" alt="" />
             <p>
               It Just Got to Be One, <br />
@@ -31,7 +31,7 @@
         </b-carousel-slide>
         <b-carousel-slide img-src="img/carousel-img002.jpg">
           <div class="carousel-caption">
-            <h1>Looking Back in Time….</h1>
+            <h1 class="header-content">Looking Back in Time….</h1>
             <img src="img/divider01.png" alt="" />
             <p>All We Adore is That One Graceful Smile……</p>
           </div>
@@ -118,16 +118,22 @@
     </div> -->
     <div class="aboutUs wrap" id="about">
       <video
-        autoplay
-        loop
-        muted
+        autoplay="autoplay"
+        loop="loop"
+        poster="/img/vid.jpg"
         id="bgvid"
+        class="hidden-xs"
       >
         <source src="video/vid.mp4" type="video/mp4" />
         <source src="video/vid.webm" type="video/webm" />
       </video>
+      <img
+        class="visible-xs"
+        src="img/mv_video-screenshot.jpg"
+        alt="3Arts Family Video Image"
+      />
       <figure class="aboutUs_caption">
-        <h1>About Us</h1>
+        <h1 class="header-content">About Us</h1>
         <img src="img/divider02.png" alt="" class="black_divider" />
         <p>
           3Arts Concept is founded with the vision to pioneer a facelift towards
@@ -161,7 +167,7 @@
     <div class="product wrap" id="product">
       <div class="row">
         <div class="col-md-5 product_description">
-          <h1>Services</h1>
+          <h1 class="header-content">Services</h1>
           <img src="img/divider02.png" alt="" class="black_divider" />
           <h2>Individual and Family Series</h2>
 
@@ -314,7 +320,7 @@
       <div class="row" style="height: 100%">
         <div class="col-md-5 steps_description">
           <div class="steps_content">
-            <h1>Price & Progress</h1>
+            <h1 class="header-content">Price & Progress</h1>
             <img src="img/divider02.png" alt="" class="black_divider" />
             <p>
               <b>Selfie Impression Figurine</b>
@@ -330,9 +336,9 @@
         </div>
         <div class="col-md-7 steps_instructions">
           <b-carousel :interval="4000" id="carousel-1" controls indicators>
-            <b-carousel-slide img-src="img/steps/step1.jpg"></b-carousel-slide>
-            <b-carousel-slide img-src="img/steps/step2.jpg"></b-carousel-slide>
-            <b-carousel-slide img-src="img/steps/step3.jpg"></b-carousel-slide>
+            <b-carousel-slide img-src="/img/steps/step1.jpg"></b-carousel-slide>
+            <b-carousel-slide img-src="/img/steps/step2.jpg"></b-carousel-slide>
+            <b-carousel-slide img-src="/img/steps/step3.jpg"></b-carousel-slide>
           </b-carousel>
         </div>
       </div>
@@ -345,9 +351,9 @@
           </b-col>
           <b-col lg="6" md="12">
             <div class="contactUs_wrapper">
-              <h1>Contact</h1>
+              <h1 class="header-content">Contact</h1>
               <img src="img/divider02.png" alt="" class="black_divider" />
-              <b-form v-on:submit.prevent="submitForm">
+              <b-form @submit="submitForm()">
                 <b-form-group
                   style="text-align: left"
                   id="input-group-2"
@@ -358,20 +364,6 @@
                     id="input-2"
                     v-model="contact.name"
                     placeholder="Enter name"
-                    required
-                  ></b-form-input>
-                </b-form-group>
-
-                <b-form-group
-                  style="text-align: left"
-                  id="input-group-3"
-                  label="Contract number:"
-                  label-for="input-3"
-                >
-                  <b-form-input
-                    id="input-3"
-                    v-model="contact.number"
-                    placeholder="Contact number:"
                     required
                   ></b-form-input>
                 </b-form-group>
@@ -411,7 +403,6 @@
               </b-form>
             </div>
           </b-col>
-       
         </div>
         <footer>
           <a
@@ -445,7 +436,7 @@
           <b-tab title="Introduction" active
             ><h1>Volunex Introduction</h1>
             <img
-              src="img/volunex-logo.png"
+              src="/img/volunex-logo.png"
               class="partner"
               alt="3Arts Partner Volunex Popup Logo" />
             <p>
@@ -477,93 +468,99 @@
                   controls
                 >
                   <b-carousel-slide
-                    img-src="img/printer1a.jpg"
+                    img-src="/img/printer1a.jpg"
                     id="partner-product"
                   ></b-carousel-slide>
                   <b-carousel-slide
-                    img-src="img/printer1b.jpg"
+                    img-src="/img/printer1b.jpg"
                     id="partner-product"
                   ></b-carousel-slide>
                   <b-carousel-slide
-                    img-src="img/printer1c.jpg"
+                    img-src="/img/printer1c.jpg"
                     id="partner-product"
                   ></b-carousel-slide> </b-carousel
               ></b-col>
               <b-col md="12" sm="12" lg="7">
-                <b-card bg-variant="light" no-body>
-                  <b-card-text class="p-2">
-                    <b-row no-gutters>
-                      <b-col>
-                        <b-list-group>
-                          <b-list-group-item
-                            ><b>Print Technology</b><br />
-                            <span
-                              >Fused Filament Fabrication</span
-                            ></b-list-group-item
-                          >
-                          <b-list-group-item>
-                            <b>AC Power Input</b><br />
-                            <span>120/240 Volts</span></b-list-group-item
-                          >
-                          <b-list-group-item>
-                            <b>Operating System</b><br />
-                            <span
-                              >Windows/ Mac OS/ Linux</span
-                            ></b-list-group-item
-                          >
-                          <b-list-group-item
-                            ><b>Heater Bed</b><br />
-                            <span>Not Applicable</span></b-list-group-item
-                          >
-                          <b-list-group-item>
-                            <b>Printing Area</b><br />
-                            <span
-                              >120mm(L) x 120mm(W) x 100mm(H)</span
-                            ></b-list-group-item
-                          >
-                          <b-list-group-item>
-                            <b>Printing Nozzle Size</b><br />
-                            <span>0.4mm</span></b-list-group-item
-                          >
-                          <b-list-group-item
-                            ><b>Connectivity</b><br />
-                            <span
-                              >USB, SD Memory Card, LCD Control Panel</span
-                            ></b-list-group-item
-                          >
-                          <b-list-group-item>
-                            <b>Options</b><br />
-                            <span
-                              >Wireless, Auto Bed Leveling</span
-                            ></b-list-group-item
-                          >
-                        </b-list-group>
-                      </b-col>
-                      <b-col>
-                        <b-list-group>
-                          <b-list-group-item
-                            ><b>Print File Format</b><br />
-                            <span
-                              >STL (STereoLithography)</span
-                            ></b-list-group-item
-                          >
-                          <b-list-group-item>
-                            <b>Print Filament Dia.</b><br />
-                            <span>1.75mm</span></b-list-group-item
-                          >
-                          <b-list-group-item>
-                            <b>Layer Resolution</b><br />
-                            <span>0.100 mm - 0.300 mm</span></b-list-group-item
-                          >
-                          <b-list-group-item
-                            ><b>Printer Fillament Type</b><br />
-                            <span>PLA</span></b-list-group-item
-                          >
-                        </b-list-group>
-                      </b-col>
-                    </b-row>
-                  </b-card-text>
-                </b-card>
+                <b-row no-gutters>
+                  <b-col>
+                    <b-list-group>
+                      <b-list-group-item class="list"
+                        ><b>Print Technology</b><br />
+                        <span class="list-content"
+                          >Fused Filament Fabrication</span
+                        ></b-list-group-item
+                      >
+                      <b-list-group-item class="list">
+                        <b>AC Power Input</b><br />
+                        <span class="list-content"
+                          >120/240 Volts</span
+                        ></b-list-group-item
+                      >
+                      <b-list-group-item class="list">
+                        <b>Operating System</b><br />
+                        <span class="list-content"
+                          >Windows/ Mac OS/ Linux</span
+                        ></b-list-group-item
+                      >
+                      <b-list-group-item class="list"
+                        ><b>Heater Bed</b><br />
+                        <span class="list-content"
+                          >Not Applicable</span
+                        ></b-list-group-item
+                      >
+                      <b-list-group-item class="list">
+                        <b>Printing Area</b><br />
+                        <span class="list-content"
+                          >120mm(L) x 120mm(W) x 100mm(H)</span
+                        ></b-list-group-item
+                      >
+                      <b-list-group-item class="list">
+                        <b>Printing Nozzle Size</b><br />
+                        <span class="list-content"
+                          >0.4mm</span
+                        ></b-list-group-item
+                      >
+                      <b-list-group-item class="list"
+                        ><b>Connectivity</b><br />
+                        <span class="list-content"
+                          >USB, SD Memory Card, LCD Control Panel</span
+                        ></b-list-group-item
+                      >
+                      <b-list-group-item class="list">
+                        <b>Options</b><br />
+                        <span class="list-content"
+                          >Wireless, Auto Bed Leveling</span
+                        ></b-list-group-item
+                      >
+                    </b-list-group>
+                  </b-col>
+                  <b-col>
+                    <b-list-group>
+                      <b-list-group-item class="list"
+                        ><b>Print File Format</b><br />
+                        <span class="list-content"
+                          >STL (STereoLithography)</span
+                        ></b-list-group-item
+                      >
+                      <b-list-group-item class="list">
+                        <b>Print Filament Dia.</b><br />
+                        <span class="list-content"
+                          >1.75mm</span
+                        ></b-list-group-item
+                      >
+                      <b-list-group-item class="list">
+                        <b>Layer Resolution</b><br />
+                        <span class="list-content"
+                          >0.100 mm - 0.300 mm</span
+                        ></b-list-group-item
+                      >
+                      <b-list-group-item class="list"
+                        ><b>Printer Fillament Type</b><br />
+                        <span class="list-content">PLA</span></b-list-group-item
+                      >
+                    </b-list-group>
+                  </b-col>
+                </b-row>
               </b-col>
             </b-row>
           </b-tab>
@@ -577,93 +574,101 @@
                   controls
                 >
                   <b-carousel-slide
-                    img-src="img/printer2a.jpg"
+                    img-src="/img/printer2a.jpg"
                     id="partner-product"
                   ></b-carousel-slide>
                   <b-carousel-slide
-                    img-src="img/printer2b.jpg"
+                    img-src="/img/printer2b.jpg"
                     id="partner-product"
                   ></b-carousel-slide>
                   <b-carousel-slide
-                    img-src="img/printer2c.jpg"
+                    img-src="/img/printer2c.jpg"
                     id="partner-product"
                   ></b-carousel-slide> </b-carousel
               ></b-col>
               <b-col md="12" sm="12" lg="7">
-                <b-card bg-variant="light" no-body>
-                  <b-card-text class="p-2">
-                    <b-row no-gutters>
-                      <b-col>
-                        <b-list-group>
-                          <b-list-group-item>
-                            <b>Print Technology</b>
-                            <br />
-                            <span>Fused Filament Fabrication</span>
-                          </b-list-group-item>
-                          <b-list-group-item>
-                            <b>AC Power Input</b><br />
-                            <span>120/240 Volts</span></b-list-group-item
-                          >
-                          <b-list-group-item>
-                            <b>Operating System</b><br />
-                            <span
-                              >Windows/ Mac OS/ Linux</span
-                            ></b-list-group-item
-                          >
-                          <b-list-group-item
-                            ><b>Heater Bed</b><br />
-                            <span>Yes</span></b-list-group-item
-                          >
-                          <b-list-group-item>
-                            <b>Printing Area</b><br />
-                            <span
-                              >300mm(L) x 200mm(W) x 200mm(H) (Height
-                              Customizable)</span
-                            ></b-list-group-item
-                          >
-                          <b-list-group-item>
-                            <b>Printing Nozzle Size</b><br />
-                            <span>0.2mm or 0.4mm</span></b-list-group-item
-                          >
-                          <b-list-group-item
-                            ><b>Connectivity</b><br />
-                            <span
-                              >USB, SD Memory Card, LCD Control Panel</span
-                            ></b-list-group-item
-                          >
-                          <b-list-group-item>
-                            <b>Options</b><br />
-                            <span
-                              >Wireless, Auto Bed Leveling</span
-                            ></b-list-group-item
-                          >
-                        </b-list-group>
-                      </b-col>
-                      <b-col>
-                        <b-list-group>
-                          <b-list-group-item
-                            ><b>Print File Format</b><br />
-                            <span
-                              >STL (STereoLithography)</span
-                            ></b-list-group-item
-                          >
-                          <b-list-group-item>
-                            <b>Print Filament Dia.</b><br />
-                            <span>1.75mm</span></b-list-group-item
-                          >
-                          <b-list-group-item>
-                            <b>Layer Resolution</b><br />
-                            <span>0.100 mm - 0.300 mm</span></b-list-group-item
-                          >
-                          <b-list-group-item
-                            ><b>Printer Fillament Type</b><br />
-                            <span>PLA, ABS, PET</span></b-list-group-item
-                          >
-                        </b-list-group>
-                      </b-col>
-                    </b-row>
-                  </b-card-text>
-                </b-card>
+                <b-row no-gutters>
+                  <b-col>
+                    <b-list-group>
+                      <b-list-group-item class="list">
+                        <b>Print Technology</b>
+                        <br />
+                        <span class="list-content"
+                          >Fused Filament Fabrication</span
+                        >
+                      </b-list-group-item>
+                      <b-list-group-item class="list">
+                        <b>AC Power Input</b><br />
+                        <span class="list-content"
+                          >120/240 Volts</span
+                        ></b-list-group-item
+                      >
+                      <b-list-group-item class="list">
+                        <b>Operating System</b><br />
+                        <span class="list-content"
+                          >Windows/ Mac OS/ Linux</span
+                        ></b-list-group-item
+                      >
+                      <b-list-group-item class="list"
+                        ><b>Heater Bed</b><br />
+                        <span class="list-content">Yes</span></b-list-group-item
+                      >
+                      <b-list-group-item class="list">
+                        <b>Printing Area</b><br />
+                        <span class="list-content"
+                          >300mm(L) x 200mm(W) x 200mm(H) (Height
+                          Customizable)</span
+                        ></b-list-group-item
+                      >
+                      <b-list-group-item class="list">
+                        <b>Printing Nozzle Size</b><br />
+                        <span class="list-content"
+                          >0.2mm or 0.4mm</span
+                        ></b-list-group-item
+                      >
+                      <b-list-group-item class="list"
+                        ><b>Connectivity</b><br />
+                        <span class="list-content"
+                          >USB, SD Memory Card, LCD Control Panel</span
+                        ></b-list-group-item
+                      >
+                      <b-list-group-item class="list">
+                        <b>Options</b><br />
+                        <span class="list-content"
+                          >Wireless, Auto Bed Leveling</span
+                        ></b-list-group-item
+                      >
+                    </b-list-group>
+                  </b-col>
+                  <b-col>
+                    <b-list-group>
+                      <b-list-group-item class="list"
+                        ><b>Print File Format</b><br />
+                        <span class="list-content"
+                          >STL (STereoLithography)</span
+                        ></b-list-group-item
+                      >
+                      <b-list-group-item class="list">
+                        <b>Print Filament Dia.</b><br />
+                        <span class="list-content"
+                          >1.75mm</span
+                        ></b-list-group-item
+                      >
+                      <b-list-group-item class="list">
+                        <b>Layer Resolution</b><br />
+                        <span class="list-content"
+                          >0.100 mm - 0.300 mm</span
+                        ></b-list-group-item
+                      >
+                      <b-list-group-item class="list"
+                        ><b>Printer Fillament Type</b><br />
+                        <span class="list-content"
+                          >PLA, ABS, PET</span
+                        ></b-list-group-item
+                      >
+                    </b-list-group>
+                  </b-col>
+                </b-row>
               </b-col>
             </b-row>
           </b-tab>
@@ -677,95 +682,103 @@
                   controls
                 >
                   <b-carousel-slide
-                    img-src="img/printer3a.jpg"
+                    img-src="/img/printer3a.jpg"
                     id="partner-product"
                   ></b-carousel-slide>
                   <b-carousel-slide
-                    img-src="img/printer3b.jpg"
+                    img-src="/img/printer3b.jpg"
                     id="partner-product"
                   ></b-carousel-slide>
                   <b-carousel-slide
-                    img-src="img/printer3c.jpg"
+                    img-src="/img/printer3c.jpg"
                     id="partner-product"
                   ></b-carousel-slide>
                   <b-carousel-slide
-                    img-src="img/printer3d.jpg"
+                    img-src="/img/printer3d.jpg"
                     id="partner-product"
                   ></b-carousel-slide> </b-carousel
               ></b-col>
               <b-col md="12" sm="12" lg="7">
-                <b-card bg-variant="light" no-body>
-                  <b-card-text class="p-2">
-                    <b-row no-gutters>
-                      <b-col>
-                        <b-list-group>
-                          <b-list-group-item
-                            ><b>Print Technology</b><br />
-                            <span
-                              >Fused Filament Fabrication</span
-                            ></b-list-group-item
-                          >
-                          <b-list-group-item>
-                            <b>AC Power Input</b><br />
-                            <span>120/240 Volts</span></b-list-group-item
-                          >
-                          <b-list-group-item>
-                            <b>Operating System</b><br />
-                            <span
-                              >Windows/ Mac OS/ Linux</span
-                            ></b-list-group-item
-                          >
-                          <b-list-group-item
-                            ><b>Heater Bed</b><br />
-                            <span>Not Applicable</span></b-list-group-item
-                          >
-                          <b-list-group-item>
-                            <b>Printing Area</b><br />
-                            <span
-                              >180mm(D) x 110mm(H) (Rotary Base)</span
-                            ></b-list-group-item
-                          >
-                          <b-list-group-item>
-                            <b>Printing Nozzle Size</b><br />
-                            <span>0.2mm or 0.4mm</span></b-list-group-item
-                          >
-                          <b-list-group-item
-                            ><b>Connectivity</b><br />
-                            <span
-                              >USB, SD Memory Card, LCD Control Panel</span
-                            ></b-list-group-item
-                          >
-                          <b-list-group-item>
-                            <b>Options</b><br />
-                            <span>Wireless</span></b-list-group-item
-                          >
-                        </b-list-group>
-                      </b-col>
-                      <b-col>
-                        <b-list-group>
-                          <b-list-group-item
-                            ><b>Print File Format</b><br />
-                            <span
-                              >STL (STereoLithography)</span
-                            ></b-list-group-item
-                          >
-                          <b-list-group-item>
-                            <b>Print Filament Dia.</b><br />
-                            <span>1.75mm</span></b-list-group-item
-                          >
-                          <b-list-group-item>
-                            <b>Layer Resolution</b><br />
-                            <span>0.100 mm - 0.300 mm</span></b-list-group-item
-                          >
-                          <b-list-group-item
-                            ><b>Printer Fillament Type</b><br />
-                            <span>PLA</span></b-list-group-item
-                          >
-                        </b-list-group>
-                      </b-col>
-                    </b-row>
-                  </b-card-text>
-                </b-card>
+                <b-row no-gutters>
+                  <b-col>
+                    <b-list-group>
+                      <b-list-group-item class="list"
+                        ><b>Print Technology</b><br />
+                        <span class="list-content"
+                          >Fused Filament Fabrication</span
+                        ></b-list-group-item
+                      >
+                      <b-list-group-item class="list">
+                        <b>AC Power Input</b><br />
+                        <span class="list-content"
+                          >120/240 Volts</span
+                        ></b-list-group-item
+                      >
+                      <b-list-group-item class="list">
+                        <b>Operating System</b><br />
+                        <span class="list-content"
+                          >Windows/ Mac OS/ Linux</span
+                        ></b-list-group-item
+                      >
+                      <b-list-group-item class="list"
+                        ><b>Heater Bed</b><br />
+                        <span class="list-content"
+                          >Not Applicable</span
+                        ></b-list-group-item
+                      >
+                      <b-list-group-item class="list">
+                        <b>Printing Area</b><br />
+                        <span class="list-content"
+                          >180mm(D) x 110mm(H) (Rotary Base)</span
+                        ></b-list-group-item
+                      >
+                      <b-list-group-item class="list">
+                        <b>Printing Nozzle Size</b><br />
+                        <span class="list-content"
+                          >0.2mm or 0.4mm</span
+                        ></b-list-group-item
+                      >
+                      <b-list-group-item class="list"
+                        ><b>Connectivity</b><br />
+                        <span class="list-content"
+                          >USB, SD Memory Card, LCD Control Panel</span
+                        ></b-list-group-item
+                      >
+                      <b-list-group-item class="list">
+                        <b>Options</b><br />
+                        <span class="list-content"
+                          >Wireless</span
+                        ></b-list-group-item
+                      >
+                    </b-list-group>
+                  </b-col>
+                  <b-col>
+                    <b-list-group>
+                      <b-list-group-item class="list"
+                        ><b>Print File Format</b><br />
+                        <span class="list-content"
+                          >STL (STereoLithography)</span
+                        ></b-list-group-item
+                      >
+                      <b-list-group-item class="list">
+                        <b>Print Filament Dia.</b><br />
+                        <span class="list-content"
+                          >1.75mm</span
+                        ></b-list-group-item
+                      >
+                      <b-list-group-item class="list">
+                        <b>Layer Resolution</b><br />
+                        <span class="list-content"
+                          >0.100 mm - 0.300 mm</span
+                        ></b-list-group-item
+                      >
+                      <b-list-group-item class="list"
+                        ><b>Printer Fillament Type</b><br />
+                        <span class="list-content">PLA</span></b-list-group-item
+                      >
+                    </b-list-group>
+                  </b-col>
+                </b-row>
               </b-col>
             </b-row>
           </b-tab>
@@ -779,91 +792,99 @@
                   controls
                 >
                   <b-carousel-slide
-                    img-src="img/printer4a.jpg"
+                    img-src="/img/printer4a.jpg"
                     id="partner-product"
                   ></b-carousel-slide>
                   <b-carousel-slide
-                    img-src="img/printer4b.jpg"
+                    img-src="/img/printer4b.jpg"
                     id="partner-product"
                   ></b-carousel-slide>
                   <b-carousel-slide
-                    img-src="img/printer4c.jpg"
+                    img-src="/img/printer4c.jpg"
                     id="partner-product"
                   ></b-carousel-slide> </b-carousel
               ></b-col>
               <b-col md="12" sm="12" lg="7">
-                <b-card bg-variant="light" no-body>
-                  <b-card-text class="p-2">
-                    <b-row no-gutters>
-                      <b-col>
-                        <b-list-group>
-                          <b-list-group-item
-                            ><b>Print Technology</b><br />
-                            <span
-                              >Fused Filament Fabrication</span
-                            ></b-list-group-item
-                          >
-                          <b-list-group-item>
-                            <b>AC Power Input</b><br />
-                            <span>120/240 Volts</span></b-list-group-item
-                          >
-                          <b-list-group-item>
-                            <b>Operating System</b><br />
-                            <span
-                              >Windows/ Mac OS/ Linux</span
-                            ></b-list-group-item
-                          >
-                          <b-list-group-item
-                            ><b>Heater Bed</b><br />
-                            <span>Yes</span></b-list-group-item
-                          >
-                          <b-list-group-item>
-                            <b>Printing Area</b><br />
-                            <span
-                              >190mm(L) x 190mm(W) x 140mm(H)</span
-                            ></b-list-group-item
-                          >
-                          <b-list-group-item>
-                            <b>Printing Nozzle Size</b><br />
-                            <span>0.2mm or 0.4mm</span></b-list-group-item
-                          >
-                          <b-list-group-item
-                            ><b>Connectivity</b><br />
-                            <span
-                              >USB, SD Memory Card, LCD Control Panel</span
-                            ></b-list-group-item
-                          >
-                          <b-list-group-item>
-                            <b>Options</b><br />
-                            <span>Wireless</span></b-list-group-item
-                          >
-                        </b-list-group>
-                      </b-col>
-                      <b-col>
-                        <b-list-group>
-                          <b-list-group-item
-                            ><b>Print File Format</b><br />
-                            <span
-                              >STL (STereoLithography)</span
-                            ></b-list-group-item
-                          >
-                          <b-list-group-item>
-                            <b>Print Filament Dia.</b><br />
-                            <span>1.75mm</span></b-list-group-item
-                          >
-                          <b-list-group-item>
-                            <b>Layer Resolution</b><br />
-                            <span>0.100 mm - 0.300 mm</span></b-list-group-item
-                          >
-                          <b-list-group-item
-                            ><b>Printer Fillament Type</b><br />
-                            <span>PLA, ABS, PET</span></b-list-group-item
-                          >
-                        </b-list-group>
-                      </b-col>
-                    </b-row>
-                  </b-card-text>
-                </b-card>
+                <b-row no-gutters>
+                  <b-col>
+                    <b-list-group>
+                      <b-list-group-item class="list"
+                        ><b>Print Technology</b><br />
+                        <span class="list-content"
+                          >Fused Filament Fabrication</span
+                        ></b-list-group-item
+                      >
+                      <b-list-group-item class="list">
+                        <b>AC Power Input</b><br />
+                        <span class="list-content"
+                          >120/240 Volts</span
+                        ></b-list-group-item
+                      >
+                      <b-list-group-item class="list">
+                        <b>Operating System</b><br />
+                        <span class="list-content"
+                          >Windows/ Mac OS/ Linux</span
+                        ></b-list-group-item
+                      >
+                      <b-list-group-item class="list"
+                        ><b>Heater Bed</b><br />
+                        <span class="list-content">Yes</span></b-list-group-item
+                      >
+                      <b-list-group-item class="list">
+                        <b>Printing Area</b><br />
+                        <span class="list-content"
+                          >190mm(L) x 190mm(W) x 140mm(H)</span
+                        ></b-list-group-item
+                      >
+                      <b-list-group-item class="list">
+                        <b>Printing Nozzle Size</b><br />
+                        <span class="list-content"
+                          >0.2mm or 0.4mm</span
+                        ></b-list-group-item
+                      >
+                      <b-list-group-item class="list"
+                        ><b>Connectivity</b><br />
+                        <span class="list-content"
+                          >USB, SD Memory Card, LCD Control Panel</span
+                        ></b-list-group-item
+                      >
+                      <b-list-group-item class="list">
+                        <b>Options</b><br />
+                        <span class="list-content"
+                          >Wireless</span
+                        ></b-list-group-item
+                      >
+                    </b-list-group>
+                  </b-col>
+                  <b-col>
+                    <b-list-group>
+                      <b-list-group-item class="list"
+                        ><b>Print File Format</b><br />
+                        <span class="list-content"
+                          >STL (STereoLithography)</span
+                        ></b-list-group-item
+                      >
+                      <b-list-group-item class="list">
+                        <b>Print Filament Dia.</b><br />
+                        <span class="list-content"
+                          >1.75mm</span
+                        ></b-list-group-item
+                      >
+                      <b-list-group-item class="list">
+                        <b>Layer Resolution</b><br />
+                        <span class="list-content"
+                          >0.100 mm - 0.300 mm</span
+                        ></b-list-group-item
+                      >
+                      <b-list-group-item class="list"
+                        ><b>Printer Fillament Type</b><br />
+                        <span class="list-content"
+                          >PLA, ABS, PET</span
+                        ></b-list-group-item
+                      >
+                    </b-list-group>
+                  </b-col>
+                </b-row>
               </b-col>
             </b-row>
           </b-tab>
@@ -875,9 +896,14 @@
 </template>
 
 <script>
+// import popup from '@/components/old/Popup.vue'
 import partnerPopup from '@/components/old/partnerPopup.vue'
 const map = require('@/utils/map')
 
+// window.onload = function () {
+//   console.log(map);
+//   map()
+// }
 export default {
   mounted() {
     setTimeout(map, 2000)
@@ -901,8 +927,6 @@ export default {
         MinNumber: false,
         Message: false,
       },
-
-      type: null,
     }
   },
   components: {
@@ -931,10 +955,10 @@ export default {
       return 'Corporate Branding'
     },
     image() {
-      if (this.type == 'wedding') return 'img/two-thumbs.jpg'
-      else if (this.type == 'child') return 'img/child.jpg'
-      else if (this.type == 'portrait') return 'img/graduant.jpg'
-      return 'img/man-woman.jpg'
+      if (this.type == 'wedding') return '/img/two-thumbs.jpg'
+      else if (this.type == 'child') return '/img/child.jpg'
+      else if (this.type == 'portrait') return '/img/graduant.jpg'
+      return '/img/man-woman.jpg'
     },
     content() {
       if (this.type == 'wedding') {
@@ -955,31 +979,99 @@ export default {
       console.log(re.test(this.contact.email))
       this.error.Email = true
     },
-    async submitForm() {
-      const response = await fetch('https://usebasin.com/f/9697b92b408a', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        redirect: 'follow',
-        referrerPolicy: 'no-referrer',
-        body: JSON.stringify(this.contact),
-      }).then((response) => {
-        if (response.ok) {
-          this.contact.name = ''
-          this.contact.email = ''
-          this.contact.message = ''
-          this.contact.number = ''
-        }
-      });
+    submitForm() {
+      this.$http
+        .get('/send-form.php', {
+          name: this.contact.name,
+          email: this.contact.email,
+          message: this.contact.message,
+          contact: this.contact.number,
+        })
+        .then((response) => {
+          if (response.ok) {
+            this.contact.name = ''
+            this.contact.email = ''
+            this.contact.message = ''
+            this.contact.number = ''
+          }
+        })
     },
     showModal(category) {
-      this.type = category
       this.productModal = !this.productModal
+      console.log(this.productModal)
+      this.type = category
     },
     showProductModal() {
       this.partnerModal = !this.productModal
     },
+    // onSwipeLeft() {
+    //   console.log('left')
+    // },
+    // isNumber(evt) {
+    //   this.contact.number = this.Number.replace(/\D/g, '')
+    //   if (this.contact.number != '') {
+    //     this.error.Number = false
+    //     if (this.contact.number.length > 7) {
+    //       this.error.MinNumber = false
+    //     }
+    //   }
+    // },
+    // submitForm() {
+    //   if (this.contact.name == '') {
+    //     this.error.Name = true
+    //   }
+    //   if (this.contact.email == '') {
+    //     this.error.Email = true
+    //   } else {
+    //     var re =
+    //       /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    //     this.error.EmailFormat = !re.test(this.Email)
+    //   }
+    //   if (this.contact.number == '') {
+    //     this.error.Number = true
+    //   } else {
+    //     this.error.MinNumber = this.contact.number.length < 8
+    //   }
+    //   if (this.contact.message == '') {
+    //     this.error.Message = true
+    //   }
+
+    //   var error = this.error
+    //   var result = false
+    //   Object.keys(this.error).map(function (value, index) {
+    //     if (error[value]) result = true
+    //   })
+
+    //   // if (!result) {
+    //   //   this.$http
+    //   //     .get('/send-form.php', {
+    //   //       name: this.Name,
+    //   //       email: this.Email,
+    //   //       message: this.Message,
+    //   //       contact: this.Number,
+    //   //     })
+    //   //     .then((response) => {
+    //   //       if (response.ok) {
+    //   //         this.Number = ''
+    //   //         this.Name = ''
+    //   //         this.Email = ''
+    //   //         this.Message = ''
+    //   //       }
+    //   //     })
+    //   // }
+    // },
+    // removeError(para) {
+    //   if (this[para] != '') {
+    //     if (para == 'Email') {
+    //       this.error[para] = false
+    //       var re =
+    //         /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    //       if (re.test(this.Email)) {
+    //         this.error.EmailFormat = false
+    //       }
+    //     } else this.error[para] = false
+    //   }
+    // },
   },
 }
 </script>

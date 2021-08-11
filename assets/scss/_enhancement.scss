@@ -1,4 +1,3 @@
-@use 'sass:math';
 //== Grid system
 //
 //## Define your custom responsive grid.
@@ -33,8 +32,8 @@ $grid-float-breakpoint-max: ($grid-float-breakpoint - 1) !default;
   // Prevent columns from collapsing when empty
   min-height: 1px;
   // Inner gutter via padding
-  padding-left: math.div($grid-gutter-width, 2);
-  padding-right: math.div($grid-gutter-width, 2);
+  padding-left: ($grid-gutter-width / 2);
+  padding-right: ($grid-gutter-width / 2);
 }
 
 // ----- col-ms breakpoints and related classes -----
@@ -60,37 +59,37 @@ $grid-float-breakpoint-max: ($grid-float-breakpoint - 1) !default;
     float: left;
   }
   .col-ms-1 {
-    width: percentage(math.div(1, $grid-columns));
+    width: percentage((1 / $grid-columns));
   }
   .col-ms-2 {
-    width: percentage(math.div(2, $grid-columns));
+    width: percentage((2 / $grid-columns));
   }
   .col-ms-3 {
-    width: percentage(math.div(3, $grid-columns));
+    width: percentage((3 / $grid-columns));
   }
   .col-ms-4 {
-    width: percentage(math.div(4, $grid-columns));
+    width: percentage((4 / $grid-columns));
   }
   .col-ms-5 {
-    width: percentage(math.div(5, $grid-columns));
+    width: percentage((5 / $grid-columns));
   }
   .col-ms-6 {
-    width: percentage(math.div(6, $grid-columns));
+    width: percentage((6 / $grid-columns));
   }
   .col-ms-7 {
-    width: percentage(math.div(7, $grid-columns));
+    width: percentage((7 / $grid-columns));
   }
   .col-ms-8 {
-    width: percentage(math.div(8, $grid-columns));
+    width: percentage((8 / $grid-columns));
   }
   .col-ms-9 {
-    width: percentage(math.div(9, $grid-columns));
+    width: percentage((9 / $grid-columns));
   }
   .col-ms-10 {
-    width: percentage(math.div(10, $grid-columns));
+    width: percentage((10 / $grid-columns));
   }
   .col-ms-11 {
-    width: percentage(math.div(11, $grid-columns));
+    width: percentage((11 / $grid-columns));
   }
   .col-ms-12 {
     width: 100%;
@@ -98,106 +97,106 @@ $grid-float-breakpoint-max: ($grid-float-breakpoint - 1) !default;
 
   // Push and pull columns for source order changes
   .col-ms-push-1 {
-    left: percentage(math.div(1, $grid-columns));
+    left: percentage((1 / $grid-columns));
   }
   .col-ms-push-2 {
-    left: percentage(math.div(2, $grid-columns));
+    left: percentage((2 / $grid-columns));
   }
   .col-ms-push-3 {
-    left: percentage(math.div(3, $grid-columns));
+    left: percentage((3 / $grid-columns));
   }
   .col-ms-push-4 {
-    left: percentage(math.div(4, $grid-columns));
+    left: percentage((4 / $grid-columns));
   }
   .col-ms-push-5 {
-    left: percentage(math.div(5, $grid-columns));
+    left: percentage((5 / $grid-columns));
   }
   .col-ms-push-6 {
-    left: percentage(math.div(6, $grid-columns));
+    left: percentage((6 / $grid-columns));
   }
   .col-ms-push-7 {
-    left: percentage(math.div(7, $grid-columns));
+    left: percentage((7 / $grid-columns));
   }
   .col-ms-push-8 {
-    left: percentage(math.div(8, $grid-columns));
+    left: percentage((8 / $grid-columns));
   }
   .col-ms-push-9 {
-    left: percentage(math.div(9, $grid-columns));
+    left: percentage((9 / $grid-columns));
   }
   .col-ms-push-10 {
-    left: percentage(math.div(10, $grid-columns));
+    left: percentage((10 / $grid-columns));
   }
   .col-ms-push-11 {
-    left: percentage(math.div(11, $grid-columns));
+    left: percentage((11 / $grid-columns));
   }
 
   .col-ms-pull-1 {
-    right: percentage(math.div(1, $grid-columns));
+    right: percentage((1 / $grid-columns));
   }
   .col-ms-pull-2 {
-    right: percentage(math.div(2, $grid-columns));
+    right: percentage((2 / $grid-columns));
   }
   .col-ms-pull-3 {
-    right: percentage(math.div(3, $grid-columns));
+    right: percentage((3 / $grid-columns));
   }
   .col-ms-pull-4 {
-    right: percentage(math.div(4, $grid-columns));
+    right: percentage((4 / $grid-columns));
   }
   .col-ms-pull-5 {
-    right: percentage(math.div(5, $grid-columns));
+    right: percentage((5 / $grid-columns));
   }
   .col-ms-pull-6 {
-    right: percentage(math.div(6, $grid-columns));
+    right: percentage((6 / $grid-columns));
   }
   .col-ms-pull-7 {
-    right: percentage(math.div(7, $grid-columns));
+    right: percentage((7 / $grid-columns));
   }
   .col-ms-pull-8 {
-    right: percentage(math.div(8, $grid-columns));
+    right: percentage((8 / $grid-columns));
   }
   .col-ms-pull-9 {
-    right: percentage(math.div(9, $grid-columns));
+    right: percentage((9 / $grid-columns));
   }
   .col-ms-pull-10 {
-    right: percentage(math.div(10, $grid-columns));
+    right: percentage((10 / $grid-columns));
   }
   .col-ms-pull-11 {
-    right: percentage(math.div(11, $grid-columns));
+    right: percentage((11 / $grid-columns));
   }
 
   // Offsets
   .col-ms-offset-1 {
-    margin-left: percentage(math.div(1, $grid-columns));
+    margin-left: percentage((1 / $grid-columns));
   }
   .col-ms-offset-2 {
-    margin-left: percentage(math.div(2, $grid-columns));
+    margin-left: percentage((2 / $grid-columns));
   }
   .col-ms-offset-3 {
-    margin-left: percentage(math.div(3, $grid-columns));
+    margin-left: percentage((3 / $grid-columns));
   }
   .col-ms-offset-4 {
-    margin-left: percentage(math.div(4, $grid-columns));
+    margin-left: percentage((4 / $grid-columns));
   }
   .col-ms-offset-5 {
-    margin-left: percentage(math.div(5, $grid-columns));
+    margin-left: percentage((5 / $grid-columns));
   }
   .col-ms-offset-6 {
-    margin-left: percentage(math.div(6, $grid-columns));
+    margin-left: percentage((6 / $grid-columns));
   }
   .col-ms-offset-7 {
-    margin-left: percentage(math.div(7, $grid-columns));
+    margin-left: percentage((7 / $grid-columns));
   }
   .col-ms-offset-8 {
-    margin-left: percentage(math.div(8, $grid-columns));
+    margin-left: percentage((8 / $grid-columns));
   }
   .col-ms-offset-9 {
-    margin-left: percentage(math.div(9, $grid-columns));
+    margin-left: percentage((9 / $grid-columns));
   }
   .col-ms-offset-10 {
-    margin-left: percentage(math.div(10, $grid-columns));
+    margin-left: percentage((10 / $grid-columns));
   }
   .col-ms-offset-11 {
-    margin-left: percentage(math.div(11, $grid-columns));
+    margin-left: percentage((11 / $grid-columns));
   }
 }
 /*

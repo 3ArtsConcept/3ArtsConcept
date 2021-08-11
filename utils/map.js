@@ -16,7 +16,7 @@ module.exports = function () {
 	map.mapTypes.set('map_style', styledMap);
 	map.setMapTypeId('map_style');
 
-	var contentString = '<div id="content" style="padding-right: 12px; width: 200px;">'+
+	var contentString = '<div id="content">'+
 	'<div id="siteNotice">'+
 	'</div>'+
 	'<h1 id="firstHeading" class="firstHeading">3Arts Concept</h1>'+
@@ -25,7 +25,7 @@ module.exports = function () {
 	'</div>';
 
 	var infowindow = new google.maps.InfoWindow({
-		content: contentString,
+		content: contentString
 	});
 
 	var marker = new google.maps.Marker({
