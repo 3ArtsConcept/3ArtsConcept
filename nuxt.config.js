@@ -82,6 +82,7 @@ export default {
         crossorigin: 'anonymous',
       },
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', href: 'https://use.typekit.net/yfz5mqb.css' },
     ],
   },
 
