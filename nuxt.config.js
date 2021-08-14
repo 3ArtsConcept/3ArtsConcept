@@ -1,10 +1,13 @@
 import webpack from 'webpack'
 
-const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
-  router: {
-    base: '/3ArtsConcept/'
-  }
-} : {};
+const routerBase =
+  process.env.DEPLOY_ENV === 'GH_PAGES'
+    ? {
+        router: {
+          base: '/3ArtsConcept/',
+        },
+      }
+    : {}
 
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
